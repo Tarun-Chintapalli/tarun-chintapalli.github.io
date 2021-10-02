@@ -1,0 +1,47 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Century Gothic;
+}
+header{
+	background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(cake.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+.clickcon {
+	padding: 15px 25px;
+	margin: 0;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+	font-size: 24px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: #fff;
+	background-color: #77DD77;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 9px #999;
+}
+
+
+.clickcon:active {
+	  background-color: #3e8e41;
+	  box-shadow: 0 5px #666;
+	  transform: translateY(4px);
+}
+.praveena{
+
+	width: 500px;
+	height: 500px;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+    
+
+}
