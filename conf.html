@@ -8,6 +8,7 @@
 <body>
 <header>
 	<img src="snapseed.png" class="praveena">
+	<h1 class="wishes" id = "wished"></h1>
 	<button class="clickcon" onclick="play();boom()">&#127881;</button>
 
 </header>
@@ -16,6 +17,10 @@
 <!-- <script>setTimeout(function(){confetti.stop();},3000)</script> -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 <script>
+	function wish() {
+		var elem = document.getElementById("wished");
+		elem.innerHTML="Voila!!!!!";
+	}
 	function play() {
 		var audio = document.getElementById("audio");
 		// if(!audio.paused):
