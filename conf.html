@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style>
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+</style>
 	<title>Tarun Chintapalli</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <script src="confetti.js"></script>
 <body>
 <header>
-	<img src="snapseed.png" class="praveena">
+	<img src="praveena.jpg" class="praveena">
 	<h1 class="wishes" id = "wished"></h1>
 	<button class="clickcon" onclick="play();boom();wish()">&#127881;</button>
+	
 
 </header>
 <!-- <script src="https://www.wpromotions.eu/confetti.min.js"></script> -->
@@ -19,7 +23,7 @@
 <script>
 	function wish() {
 		var elem = document.getElementById("wished");
-		elem.innerHTML="Voila!!!!!";
+		elem.innerHTML="&#129395; Happy Birthday &#129395;";
 	}
 	function play() {
 		var audio = document.getElementById("audio");
@@ -31,7 +35,7 @@
 	function boom() {
 		var count = 143;
 		var defaults = {
-		  origin: { y: 0.7 }
+		  origin: { y: 0.8 }
 		};
 
 		function fire(particleRatio, opts) {
@@ -42,10 +46,10 @@
 
 		fire(0.25, {
 		  spread: 26,
-		  startVelocity: 55,
+		  startVelocity: 55
 		});
 		fire(0.2, {
-		  spread: 60,
+		  spread: 60
 		});
 		fire(0.35, {
 		  spread: 100,
@@ -60,7 +64,7 @@
 		});
 		fire(0.1, {
 		  spread: 120,
-		  startVelocity: 45,
+		  startVelocity: 45
 		});
 	}
 </script>
