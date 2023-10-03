@@ -23,10 +23,11 @@
             min-height: 100vh;
         }
 
-        .birthday-heading-container {
-            text-align: center; /* Center-align the content */
-            white-space: nowrap; /* Prevent text from wrapping */
-            overflow: hidden; /* Hide overflowing text */
+        .birthday-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .birthday-heading {
@@ -34,6 +35,7 @@
             font-size: 64px;
             color: #fff;
             margin-bottom: 20px;
+            white-space: nowrap; /* Prevent text from wrapping */
         }
 
         .typing-box {
@@ -78,12 +80,12 @@
     </style>
 </head>
 <body>
-    <div class="birthday-heading-container">
+    <div class="birthday-container">
         <h1 class="birthday-heading">Happy Birthday 🎉🎂</h1>
-    </div>
-    <div class="typing-box">
-        <button class="play-button" id="startTyping">Start Typing</button>
-        <p class="typing-text"></p>
+        <div class="typing-box">
+            <button class="play-button" id="startTyping">Start Typing</button>
+            <p class="typing-text"></p>
+        </div>
     </div>
 
     <script>
