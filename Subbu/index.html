@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typing Effect Webpage</title>
     <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet"> <!-- Add this line to include the Cookie font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -23,15 +23,21 @@
             min-height: 100vh;
         }
 
+        .birthday-heading-container {
+            text-align: center; /* Center-align the content */
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Hide overflowing text */
+        }
+
         .birthday-heading {
             font-family: 'Allura', cursive;
-            font-size: 64px; /* Increased font size for the "Happy Birthday" text */
-            color: #fff; /* Text color for the heading */
+            font-size: 64px;
+            color: #fff;
             margin-bottom: 20px;
         }
 
         .typing-box {
-            font-family: 'Cookie', cursive; /* Use the Cookie font for the typing box */
+            font-family: 'Cookie', cursive;
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 5px;
@@ -72,7 +78,9 @@
     </style>
 </head>
 <body>
-    <h1 class="birthday-heading">Happy Birthday 🎉🎂</h1>
+    <div class="birthday-heading-container">
+        <h1 class="birthday-heading">Happy Birthday 🎉🎂</h1>
+    </div>
     <div class="typing-box">
         <button class="play-button" id="startTyping">Start Typing</button>
         <p class="typing-text"></p>
