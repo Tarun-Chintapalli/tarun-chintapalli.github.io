@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Effect Webpage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet"> <!-- Add this line to include the Cookie font -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('your-background-image.jpeg'); /* Replace with the URL of your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .birthday-heading {
+            font-family: 'Allura', cursive;
+            font-size: 64px; /* Increased font size for the "Happy Birthday" text */
+            color: #fff; /* Text color for the heading */
+            margin-bottom: 20px;
+        }
+
+        .typing-box {
+            font-family: 'Cookie', cursive; /* Use the Cookie font for the typing box */
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 80%;
+        }
+
+        .typing-text {
+            font-size: 24px;
+            white-space: pre-line;
+        }
+
+        .play-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .play-button:focus {
+            outline: none;
+        }
+
+        @media (max-width: 768px) {
+            .typing-box {
+                max-width: 95%;
+            }
+
+            .typing-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="birthday-heading">Happy Birthday 🎉🎂</h1>
+    <div class="typing-box">
+        <button class="play-button" id="startTyping">Start Typing</button>
+        <p class="typing-text"></p>
+    </div>
+
+    <script>
+        const startButton = document.getElementById('startTyping');
+        const typingText = document.querySelector('.typing-text');
+        const textToType = "This is a typing effect paragraph in a centered box with emojis 🌟✨.\n\nThis is some more text that goes to the next line when \nline breaks are inserted manually in the text 🚀.\n\nYou can control where the text wraps by using the \n&lt;br&gt; HTML tag 📝.";
+        let charIndex = 0;
+
+        startButton.addEventListener('click', () => {
+            startButton.style.display = 'none';
+            function typeCharacter() {
+                if (charIndex < textToType.length) {
+                    typingText.textContent += textToType.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeCharacter, 50);
+                }
+            }
+
+            typeCharacter();
+        });
+    </script>
+</body>
+</html>
