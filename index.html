@@ -3,77 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Effect Webpage</title>
+    <title>Are You Ready?</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-image: url('1234.jpg'); /* Replace with the URL of your background image */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-color: #f0f0f0;
         }
 
-        .typing-box {
-            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background color to improve text readability */
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        h1 {
+            font-family: 'Allura', cursive;
+            font-size: 4rem;
             text-align: center;
-            max-width: 600px;
-        }
-
-        .typing-text {
-            font-size: 24px;
-            white-space: pre-line; /* Preserve line breaks */
-        }
-
-        .play-button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .play-button:focus {
-            outline: none;
         }
     </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&display=swap">
 </head>
 <body>
-    <div class="typing-box">
-        <button class="play-button" id="startTyping">Start Typing</button>
-        <p class="typing-text"></p>
-    </div>
-
-    <script>
-        const startButton = document.getElementById('startTyping');
-        const typingText = document.querySelector('.typing-text');
-        const textToType = "This is a typing effect paragraph in a centered box.\nThis is some more text that goes to the next line when \nline breaks are inserted manually in the text.\nYou can control where the text wraps by using the \n.";
-        let charIndex = 0;
-
-        startButton.addEventListener('click', () => {
-            startButton.style.display = 'none'; // Hide the button
-
-            function typeCharacter() {
-                if (charIndex < textToType.length) {
-                    typingText.textContent += textToType.charAt(charIndex);
-                    charIndex++;
-                    setTimeout(typeCharacter, 50); // Delay between typing each character (adjust as needed)
-                }
-            }
-
-            typeCharacter();
-        });
-    </script>
+    <h1>Are You Ready</h1>
 </body>
 </html>
