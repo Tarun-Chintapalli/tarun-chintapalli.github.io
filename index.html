@@ -3,47 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer</title>
+    <title>Typing Effect Webpage</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
+            background-image: url('1234.jpg'); /* Replace with the URL of your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
         }
 
-        #countdown {
-            font-size: 4rem;
+        .typing-box {
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background color to improve text readability */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             text-align: center;
+            max-width: 600px;
+        }
+
+        .typing-text {
+            font-size: 24px;
+            white-space: pre-line; /* Preserve line breaks */
+        }
+
+        .play-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .play-button:focus {
+            outline: none;
         }
     </style>
 </head>
 <body>
-    <div id="countdown"></div>
+    <div class="typing-box">
+        <button class="play-button" id="startTyping">Start Typing</button>
+        <p class="typing-text"></p>
+    </div>
 
     <script>
-        // Set the date we're counting down to
-        const countdownDate = new Date("2023-10-04T00:00:00").getTime();
+        const startButton = document.getElementById('startTyping');
+        const typingText = document.querySelector('.typing-text');
+        const textToType = "This is a typing effect paragraph in a centered box.\nThis is some more text that goes to the next line when \nline breaks are inserted manually in the text.\nYou can control where the text wraps by using the \n.";
+        let charIndex = 0;
 
-        // Update the countdown every second
-        const countdown = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
+        startButton.addEventListener('click', () => {
+            startButton.style.display = 'none'; // Hide the button
 
-            if (distance <= 0) {
-                clearInterval(countdown);
-                document.getElementById("countdown").innerHTML = "EXPIRED";
-            } else {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            function typeCharacter() {
+                if (charIndex < textToType.length) {
+                    typingText.textContent += textToType.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeCharacter, 50); // Delay between typing each character (adjust as needed)
+                }
             }
-        }, 1000);
+
+            typeCharacter();
+        });
     </script>
 </body>
 </html>
