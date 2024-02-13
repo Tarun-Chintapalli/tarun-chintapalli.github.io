@@ -34,4 +34,9 @@ button {
 
 #noButton {
     background-color: #ff5252; /* Red color for NO button */
-    color: #fff; /* Whi
+    color: #fff; /* White */
+}
+
+.valentine-text {
+    color: #ff3860; /* Lovely Valentine red color for the text */
+}
