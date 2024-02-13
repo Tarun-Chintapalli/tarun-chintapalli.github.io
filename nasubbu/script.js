@@ -3,7 +3,7 @@ let noButton = document.getElementById('noButton');
 let smilingImage = document.querySelector('.smiling-image');
 
 let size = 1.5; // Initial size of the button
-let noButtonLabels = ["Really?", "Are you sure?", "This is sad"];
+let noButtonLabels = ["Anthe le", "Sare le", "It's okay le","Parledu le","Em chestham le","Ala aipoindi le"];
 let imageCount = 14; // Number of images
 let currentImageIndex = 1; // Initial image index
 
@@ -26,7 +26,7 @@ noButton.addEventListener('click', () => {
     } else {
         // Remove NO button and update text
         noButton.remove();
-        document.querySelector('h1').innerText = "ACCEPTTTT";
+        document.querySelector('h1').innerText = "Maryadaga accept cheyy!!!!!";
     }
     currentImageIndex = (currentImageIndex % imageCount) + 1;
     smilingImage.src = `images/${currentImageIndex}.jpg`;
@@ -39,7 +39,7 @@ yesButton.addEventListener('click', () => {
     // Replace image with a GIF
     smilingImage.src = 'images/accept.gif'; // Update with the path to your GIF
     // Update text
-    document.querySelector('h1').innerText = " accept";
+    document.querySelector('h1').innerText = "...Here are the kisses and Here is your letter..";
 
     // Add download button for PDF
     let downloadButton = document.createElement('a');
