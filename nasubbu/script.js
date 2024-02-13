@@ -3,7 +3,7 @@ let noButton = document.getElementById('noButton');
 let smilingImage = document.querySelector('.smiling-image');
 
 let size = 1.5; // Initial size of the button
-let noButtonLabels = ["Anthe le", "Sare le", "It's okay le","Parledu le","Em chestham le","Ala aipoindi le"];
+let noButtonLabels = ["Anthe le", "Sare le", "It's okay le","Parledu le","Em chestham le","Ala aipoindi le","Lite le","Inkoddu le"];
 let imageCount = 14; // Number of images
 let currentImageIndex = 1; // Initial image index
 
@@ -18,9 +18,12 @@ noButton.addEventListener('click', () => {
 
     if (currentImageIndex+1 < imageCount) {
         // Change label of NO button cyclically
-        let randomIndex = Math.floor(Math.random() * noButtonLabels.length);
-        noButton.innerText = noButtonLabels[randomIndex];
-
+        let newName = noButton.innerText;
+        while (newName === noButton.innerText) {
+            let randomIndex = Math.floor(Math.random() * noButtonLabels.length);
+            newName = noButtonLabels[randomIndex];
+        }
+        noButton.innerText = newName;
         // Change image source cyclically
         
     } else {
