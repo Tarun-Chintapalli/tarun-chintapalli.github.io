@@ -47,8 +47,8 @@ yesButton.addEventListener('click', () => {
     // Add download button for PDF
     let downloadButton = document.createElement('a');
     downloadButton.textContent = "💌";
-    downloadButton.href = "Love_letter.pdf"; // Update with the correct path to your PDF file
-    downloadButton.download = "valentine_card.pdf"; // Set the filename for the downloaded file
-    document.querySelector('.container').appendChild(downloadButton);
+    // downloadButton.href = "Love_letter.pdf"; // Update with the correct path to your PDF file
+    // downloadButton.download = "valentine_card.pdf"; // Set the filename for the downloaded file
+    // document.querySelector('.container').appendChild(downloadButton);
     downloadButton.style.fontSize = '7rem';
 });
