@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AP EAMCET 2024 College Predictor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <style>
+    :root {
+      --primary: #0066cc;
+      --background: #f4f4f4;
+      --card-bg: #ffffff;
+      --text-dark: #222;
+      --border-color: #ddd;
+      --accent: #ffcc00;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+
+    .container {
+      background: var(--card-bg);
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    input, select, button {
+      padding: 0.6rem;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #004999;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎓 AP EAMCET 2024 College Predictor</h1>
+
+  <div class="container">
+    <div class="form-group">
+      <label for="rankInput">Enter Rank</label>
+      <input type="number" id="rankInput" placeholder="e.g. 75000">
+    </div>
+
+    <div class="form-group">
+      <label for="genderInput">Gender</label>
+      <select id="genderInput">
+        <option value="BOYS">Boy</option>
+        <option value="GIRLS">Girl</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="casteInput">Caste</label>
+      <select id="casteInput">
+        <option value="OC">OC</option>
+        <option value="SC">SC</option>
+        <option value="ST">ST</option>
+        <option value="BCA">BCA</option>
+        <option value="BCB">BCB</option>
+        <option value="BCC">BCC</option>
+        <option value="BCD">BCD</option>
+        <option value="BCE">BCE</option>
+        <option value="OC_EWS">OC_EWS</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="branchInput">Optional: Branch</label>
+      <select id="branchInput" multiple></select>
+    </div>
+
+    <div class="form-group">
+      <label for="districtInput">Optional: District</label>
+      <select id="districtInput" multiple></select>
+    </div>
+
+    <button onclick="filterColleges()">🔍 Show Eligible Colleges</button>
+  </div>
+
+  <table id="resultsTable" style="display:none;">
+    <thead>
+      <tr>
+        <th>College</th>
+        <th>Branch</th>
+        <th>District</th>
+        <th>Place</th>
+        <th>Cutoff Rank</th>
+        <th>Fee (₹)</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    let collegeData = [];
+    let branchChoices, districtChoices;
+
+    async function loadData() {
+      try {
+        const res = await fetch("college_predictor_clean.json");
+        if (!res.ok) throw new Error("HTTP error " + res.status);
+        collegeData = await res.json();
+        populateFilters();
+      } catch (error) {
+        alert("❌ Failed to load college data: " + error.message);
+        console.error(error);
+      }
+    }
+
+    function populateFilters() {
+      const branches = new Set();
+      const districts = new Set();
+
+      collegeData.forEach(row => {
+        if (row.branch_code) branches.add(row.branch_code);
+        if (row.DIST) districts.add(row.DIST);
+      });
+
+      const branchInput = document.getElementById("branchInput");
+      const districtInput = document.getElementById("districtInput");
+
+      [...branches].sort().forEach(branch => {
+        const option = document.createElement("option");
+        option.value = branch;
+        option.textContent = branch;
+        branchInput.appendChild(option);
+      });
+
+      [...districts].sort().forEach(dist => {
+        const option = document.createElement("option");
+        option.value = dist;
+        option.textContent = dist;
+        districtInput.appendChild(option);
+      });
+
+      branchChoices = new Choices(branchInput, { removeItemButton: true });
+      districtChoices = new Choices(districtInput, { removeItemButton: true });
+    }
+
+    function filterColleges() {
+      const rank = parseInt(document.getElementById("rankInput").value);
+      const gender = document.getElementById("genderInput").value;
+      const caste = document.getElementById("casteInput").value;
+
+      const selectedBranches = branchChoices.getValue(true);
+      const selectedDistricts = districtChoices.getValue(true);
+
+      const rankColumn = `${caste}_${gender}`;
+
+      const results = collegeData.filter(row => {
+        const cutoff = parseInt(row[rankColumn]);
+        if (isNaN(cutoff) || rank > cutoff) return false;
+        if (selectedBranches.length > 0 && !selectedBranches.includes(row.branch_code)) return false;
+        if (selectedDistricts.length > 0 && !selectedDistricts.includes(row.DIST)) return false;
+        return true;
+      });
+
+      const table = document.getElementById("resultsTable");
+      const tbody = table.querySelector("tbody");
+      tbody.innerHTML = "";
+
+      if (results.length === 0) {
+        tbody.innerHTML = "<tr><td colspan='6'>No matching colleges found.</td></tr>";
+      } else {
+        results.forEach(row => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td>${row.NAME_OF_THE_INSTITUTION}</td>
+            <td>${row.branch_code}</td>
+            <td>${row.DIST}</td>
+            <td>${row.PLACE}</td>
+            <td>${row[rankColumn]}</td>
+            <td>${row.COLLFEE || "N/A"}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      table.style.display = "table";
+    }
+
+    loadData();
+  </script>
+
+</body>
+</html>
