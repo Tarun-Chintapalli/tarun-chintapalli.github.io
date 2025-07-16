@@ -1,29 +1,643 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Are You Ready?</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
+  <meta charset="UTF-8">
+  <title>Tarun Chintapalli</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0d1117; /* Initial background color */
+      color: #ffffff;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* Align content to the top initially */
+      min-height: 200vh; /* Make body taller to allow scrolling */
+      text-align: center;
+      overflow-x: hidden; /* Prevent horizontal scrollbar during animation */
+      transition: background-color 0.5s ease; /* Smooth transition for background color */
+    }
 
-        h1 {
-            font-family: 'Allura', cursive;
-            font-size: 4rem;
-            text-align: center;
-        }
-    </style>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&display=swap">
+    /* Canvas for the interactive background */
+    #interactiveBackground {
+      position: fixed; /* Fixed to cover the viewport */
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0; /* Below content but above default body background */
+      pointer-events: none; /* Allows clicks to pass through to elements beneath */
+    }
+
+    /* Main Content Wrapper - holds content that scrolls */
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh; /* Takes full viewport height initially */
+        position: relative;
+        /* Padding-top will be set by JS dynamically to avoid overlap */
+        box-sizing: border-box;
+        z-index: 1; /* Ensure content-wrapper is below the fixed photo frame */
+    }
+
+    /* The expanding frame (acts as the container for the photo) */
+    .profile-frame {
+        width: 160px; /* Initial frame size */
+        height: 160px;
+        border-radius: 50%;
+        border: 4px solid white;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        position: fixed; /* Keep it in viewport relative to scroll */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the frame initially */
+        overflow: hidden; /* Crucial: Clips the content (image) inside if it's too big */
+        display: flex; /* Use flexbox to center the image inside */
+        align-items: center;
+        justify-content: center;
+        z-index: 100; /* Ensure it's on top of content-wrapper */
+        will-change: width, height, border-radius, transform, border, box-shadow;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease-in-out; /* Only for hover, JS handles scroll */
+    }
+
+    /* Hover effect for the frame */
+    .profile-frame:hover {
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 10px rgba(122, 255, 122, 0.8);
+    }
+
+    /* Main Profile Photo inside the frame */
+    img.profile {
+      width: 150px; /* Initial width of the image */
+      height: 150px; /* Initial height of the image */
+      border-radius: 50%; /* Image itself remains circular initially */
+      object-fit: cover;
+      transition: none; /* No individual CSS transitions, JS handles everything */
+      will-change: width, height, border-radius; /* Optimize for image animation */
+    }
+
+    .typing-wrapper {
+      display: flex;
+      flex-direction: column; /* Changed to column to stack text elements */
+      align-items: center;
+      font-size: 2rem;
+    }
+
+    .constant-text {
+      margin-right: 0; /* No right margin when stacked */
+      margin-bottom: 12px; /* Add bottom margin for separation */
+    }
+
+    .typed-box {
+      background-color: #1F2938;
+      border: 2px solid #1F2938;
+      border-radius: 8px;
+      padding: 10px 20px;
+      min-width: 50px;
+      display: inline-block;
+      transition: width 0.3s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid white;
+    }
+
+    /* ID Card Overlay Styles (Covers the screen) */
+    .id-card-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .id-card-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Actual ID Card Container */
+    .id-card {
+      background-color: #1F2938;
+      border-radius: 12px;
+      padding: 30px;
+      color: #ffffff;
+      width: 500px;
+      max-width: 90%;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+      transform: translateY(50px);
+      opacity: 0;
+      transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 25px;
+    }
+
+    .id-card-overlay.active .id-card {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ID Card Photo */
+    .id-card-photo {
+    min-width: 120px;
+    width: 120px;
+    height: 120px;
+    border-radius: 10%;
+    object-fit: cover;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    /* ID Card Details (text content) */
+    .id-card-details {
+      text-align: left;
+      flex-grow: 1;
+    }
+
+    .id-card h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #7aff7a;
+    }
+
+    .id-card p {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .id-card .resume-button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+
+    .id-card .resume-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Close button for the ID card */
+    .id-card .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .id-card .close-button:hover {
+        color: #7aff7a;
+    }
+
+
+    /* Responsive adjustments for smaller screens */
+    @media screen and (max-width: 600px) {
+      .typing-wrapper {
+        font-size: 1.5rem;
+        flex-direction: column;
+      }
+
+      .constant-text {
+        margin-bottom: 10px;
+      }
+
+      .id-card {
+        flex-direction: column;
+        align-items: center;
+        width: 85%;
+        padding: 20px;
+        gap: 15px;
+      }
+
+      .id-card-details {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Tarun Chintapalli</h1>
+
+  <canvas id="interactiveBackground"></canvas>
+
+  <div class="profile-frame" id="profileFrame">
+      <img class="profile" id="profilePhoto" src="peeps-avatar-2.png" alt="Tarun Chintapalli">
+  </div>
+
+  <div class="content-wrapper" id="contentWrapper">
+    <div class="typing-wrapper">
+      <span class="constant-text">I am a</span>
+      <span class="typed-box" id="typed"></span>
+    </div>
+
+    <div style="height: 100vh; display: flex; align-items: center; justify-content: center; width: 80%; opacity: 0.2; color: #fff; font-size: 1.2rem;">
+        <p>Scroll for more</p>
+    </div>
+     <div style="height: 50vh; display: flex; align-items: center; justify-content: center; width: 80%; opacity: 0.2; color: #000; font-size: 1.2rem;">
+        <p>To be added...</p>
+    </div>
+  </div>
+
+
+  <div class="id-card-overlay" id="idCardOverlay">
+    <div class="id-card" id="idCard">
+      <button class="close-button" id="closeIdCard">&times;</button>
+      <img class="id-card-photo" id="idCardPhoto" src="peeps-avatar-2.png" alt="Tarun Chintapalli">
+      <div class="id-card-details">
+        <h2>Tarun Chintapalli ✨</h2>
+        <p>🧑‍💻: Senior AI Engineer 🤖</p>
+        <p>📧: tarun.chintapalli86@gmail.com 📧</p>
+        <p>📍: Bengaluru, India 🇮🇳</p>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    const phrases = [
+      "Senior AI Engineer",
+      "Tinkerer",
+      "Problem Solver",
+      "Creative Thinker"
+    ];
+
+    let i = 0;
+    let j = 0;
+    let currentPhrase = [];
+    let isDeleting = false;
+    const typedElement = document.getElementById('typed');
+    const delay = { typing: 100, erasing: 50, pause: 1200 };
+
+    function typeLoop() {
+      typedElement.textContent = currentPhrase.join('');
+      typedElement.style.width = `${typedElement.textContent.length + 1}ch`;
+
+      if (!isDeleting && j <= phrases[i].length) {
+        currentPhrase.push(phrases[i][j]);
+        j++;
+        setTimeout(typeLoop, delay.typing);
+      } else if (isDeleting && j > 0) {
+        currentPhrase.pop();
+        j--;
+        setTimeout(typeLoop, delay.erasing);
+      } else if (!isDeleting && j > phrases[i].length) {
+        isDeleting = true;
+        setTimeout(typeLoop, delay.pause);
+      } else if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % phrases.length;
+        setTimeout(typeLoop, delay.typing);
+      }
+    }
+
+    typeLoop();
+
+    // ID Card functionality
+    const profileFrame = document.getElementById('profileFrame');
+    const profilePhoto = document.getElementById('profilePhoto');
+    const idCardOverlay = document.getElementById('idCardOverlay');
+    const idCard = document.getElementById('idCard');
+    const idCardPhoto = document.getElementById('idCardPhoto');
+    const closeIdCardButton = document.getElementById('closeIdCard');
+    const bodyElement = document.body;
+    const contentWrapper = document.getElementById('contentWrapper');
+
+    profileFrame.addEventListener('click', () => {
+      idCardPhoto.src = profilePhoto.src;
+      idCardOverlay.classList.add('active');
+    });
+
+    idCardOverlay.addEventListener('click', (event) => {
+        if (event.target === idCardOverlay) {
+            idCardOverlay.classList.remove('active');
+        }
+    });
+
+    closeIdCardButton.addEventListener('click', () => {
+        idCardOverlay.classList.remove('active');
+    });
+
+    idCard.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+
+    // --- Dynamic Padding-Top Calculation for content-wrapper ---
+    function setContentWrapperPadding() {
+        const profileFrameHeight = profileFrame.offsetHeight;
+        const desiredSpacing = 30;
+        const frameCenterY = window.innerHeight / 2;
+        const paddingTopValue = frameCenterY + (profileFrameHeight / 2) + desiredSpacing;
+        contentWrapper.style.paddingTop = `${paddingTopValue}px`;
+    }
+
+    window.addEventListener('load', setContentWrapperPadding);
+    window.addEventListener('resize', setContentWrapperPadding);
+
+    // --- Scroll Animation for Profile Frame and Photo ---
+    const scrollAnimationStart = 0;
+    const scrollAnimationEnd = window.innerHeight;
+
+    // Define initial and target colors for particles
+    const particleInitialR = 255, particleInitialG = 255, particleInitialB = 255; // White
+    const particleTargetR = 13, particleTargetG = 17, particleTargetB = 23;     // #0d1117 (Dark)
+    let currentParticleColor = `rgb(${particleInitialR}, ${particleInitialG}, ${particleInitialB})`;
+
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+
+      if (scrollY >= scrollAnimationStart && scrollY <= scrollAnimationEnd) {
+        const progress = (scrollY - scrollAnimationStart) / (scrollAnimationEnd - scrollAnimationStart);
+
+        // --- Image Sizing (Image grows within the frame) ---
+        const initialImageSize = 150;
+        const targetImageSize = Math.min(window.innerWidth, window.innerHeight) * 0.8;
+
+        const newImageSize = initialImageSize + (targetImageSize - initialImageSize) * progress;
+
+        profilePhoto.style.width = `${newImageSize}px`;
+        profilePhoto.style.height = `${newImageSize}px`;
+        profilePhoto.style.borderRadius = `${50 - (50 * progress)}%`;
+
+        // --- Frame Sizing (Frame matches image size, its border/shadow/radius vanish) ---
+        const initialFrameBorderWidth = 4;
+        const shrinkingBorderOffset = initialFrameBorderWidth - (initialFrameBorderWidth * progress * 2);
+        const newFrameSize = newImageSize + Math.max(0, shrinkingBorderOffset * 2);
+
+        profileFrame.style.width = `${newFrameSize}px`;
+        profileFrame.style.height = `${newFrameSize}px`;
+
+        // --- Frame Position (Center-Left) ---
+        const initialLeftVW = 50;
+        const targetLeftVW = 25;
+
+        const currentLeftVW = initialLeftVW + (targetLeftVW - initialLeftVW) * progress;
+        const currentTopVH = 50;
+
+        profileFrame.style.left = `${currentLeftVW}vw`;
+        profileFrame.style.top = `${currentTopVH}vh`;
+        profileFrame.style.transform = `translate(-50%, -50%)`;
+
+        // --- Frame Border, Shadow, Radius Disappearance ---
+        profileFrame.style.borderWidth = `${Math.max(0, shrinkingBorderOffset)}px`;
+        profileFrame.style.boxShadow = `0 0 ${15 - (15 * progress)}px rgba(255, 255, 255, ${Math.max(0, 0.2 - (0.2 * progress * 2))})`;
+        profileFrame.style.borderRadius = `${50 - (50 * progress * 1.5)}%`;
+
+        profileFrame.style.opacity = '1'; // Stays visible
+
+        // --- Background Color Change ---
+        const initialR = 13, initialG = 17, initialB = 23;
+        const targetR = 204, targetG = 215, targetB = 214;
+
+        const currentR = Math.round(initialR + (targetR - initialR) * progress);
+        const currentG = Math.round(initialG + (targetG - initialG) * progress);
+        const currentB = Math.round(initialB + (targetB - initialB) * progress);
+        bodyElement.style.backgroundColor = `rgb(${currentR}, ${currentG}, ${currentB})`;
+
+        // --- Text Color Change (from white to black) ---
+        const textInitialR = 255, textInitialG = 255, textInitialB = 255;
+        const textTargetR = 0, textTargetG = 0, textTargetB = 0;
+
+        const currentTextR = Math.round(textInitialR + (textTargetR - textInitialR) * progress);
+        const currentTextG = Math.round(textInitialG + (textTargetG - textInitialG) * progress);
+        const currentTextB = Math.round(textInitialB + (textTargetB - textInitialB) * progress);
+        bodyElement.style.color = `rgb(${currentTextR}, ${currentTextG}, ${currentTextB})`;
+
+        // --- Particle Color Change ---
+        const currentParticleR = Math.round(particleInitialR + (particleTargetR - particleInitialR) * progress);
+        const currentParticleG = Math.round(particleInitialG + (particleTargetG - particleInitialG) * progress);
+        const currentParticleB = Math.round(particleInitialB + (particleTargetB - particleInitialB) * progress);
+        currentParticleColor = `rgb(${currentParticleR}, ${currentParticleG}, ${currentParticleB})`;
+
+        // --- Typing Wrapper Fade Out and Move Down ---
+        const fadeStartProgress = 0.1;
+        const fadeEndProgress = 0.5;
+
+        if (progress > fadeStartProgress && progress <= fadeEndProgress) {
+            const fadeProgress = (progress - fadeStartProgress) / (fadeEndProgress - fadeStartProgress);
+            typedElement.parentElement.style.opacity = `${1 - fadeProgress}`;
+            typedElement.parentElement.style.transform = `translateY(${fadeProgress * 50}px)`;
+        } else if (progress <= fadeStartProgress) {
+            typedElement.parentElement.style.opacity = '1';
+            typedElement.parentElement.style.transform = 'translateY(0)';
+        } else if (progress > fadeEndProgress) {
+            typedElement.parentElement.style.opacity = '0';
+            typedElement.parentElement.style.transform = 'translateY(50px)';
+        }
+
+      } else if (scrollY < scrollAnimationStart) {
+        // --- Reset to initial state if scrolled back to top ---
+        profileFrame.style.width = '160px';
+        profileFrame.style.height = '160px';
+        profileFrame.style.left = '50%';
+        profileFrame.style.top = '50%';
+        profileFrame.style.transform = 'translate(-50%, -50%)';
+        profileFrame.style.borderRadius = '50%';
+        profileFrame.style.borderWidth = '4px';
+        profileFrame.style.boxShadow = '0 0 15px rgba(255, 255, 255, 0.2)';
+        profileFrame.style.opacity = '1';
+
+        profilePhoto.style.width = '150px';
+        profilePhoto.style.height = '150px';
+        profilePhoto.style.borderRadius = '50%';
+
+        bodyElement.style.backgroundColor = '#0d1117';
+        bodyElement.style.color = '#ffffff';
+
+        typedElement.parentElement.style.opacity = '1';
+        typedElement.parentElement.style.transform = 'translateY(0)';
+
+        currentParticleColor = `rgb(${particleInitialR}, ${particleInitialG}, ${particleInitialB})`; // Reset particle color
+
+      } else if (scrollY > scrollAnimationEnd) {
+        // --- Ensure it's at final state after animation range ---
+        profileFrame.style.opacity = '1';
+        profileFrame.style.width = `${Math.min(window.innerWidth, window.innerHeight) * 0.8}px`;
+        profileFrame.style.height = `${Math.min(window.innerWidth, window.innerHeight) * 0.8}px`;
+        profileFrame.style.left = `25vw`;
+        profileFrame.style.top = `50vh`;
+        profileFrame.style.transform = `translate(-50%, -50%)`;
+        profileFrame.style.borderRadius = '0%';
+        profileFrame.style.borderWidth = '0px';
+        profileFrame.style.boxShadow = 'none';
+
+        profilePhoto.style.width = `${Math.min(window.innerWidth, window.innerHeight) * 0.8}px`;
+        profilePhoto.style.height = `${Math.min(window.innerWidth, window.innerHeight) * 0.8}px`;
+        profilePhoto.style.borderRadius = '0%';
+
+        bodyElement.style.backgroundColor = '#CCD7D6';
+        bodyElement.style.color = '#000000';
+
+        typedElement.parentElement.style.opacity = '0';
+        typedElement.parentElement.style.transform = 'translateY(50px)';
+
+        currentParticleColor = `rgb(${particleTargetR}, ${particleTargetG}, ${particleTargetB})`; // Set to final color
+      }
+    });
+
+    window.addEventListener('resize', () => {
+        scrollAnimationEnd = window.innerHeight;
+        setContentWrapperPadding();
+        window.dispatchEvent(new Event('scroll'));
+    });
+
+    window.dispatchEvent(new Event('scroll'));
+
+
+    // --- Interactive Background Logic ---
+    const canvas = document.getElementById('interactiveBackground');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    const maxParticles = 500;
+    const connectionDistance = 100;
+    const particleSpeed = 0.5;
+    let mouse = { x: null, y: null, radius: 150 };
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    function Particle(x, y, directionX, directionY, size) {
+      this.x = x;
+      this.y = y;
+      this.directionX = directionX;
+      this.directionY = directionY;
+      this.size = size;
+      // Particle color is no longer fixed here, it's dynamic
+    }
+
+    Particle.prototype.draw = function() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+      // Use the global `currentParticleColor` for drawing
+      ctx.fillStyle = currentParticleColor;
+      ctx.fill();
+    }
+
+    Particle.prototype.update = function() {
+      if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+        this.directionX = -this.directionX;
+      }
+      if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+        this.directionY = -this.directionY;
+      }
+
+      let dx = mouse.x - this.x;
+      let dy = mouse.y - this.y;
+      let distance = Math.sqrt(dx*dx + dy*dy);
+
+      if (distance < mouse.radius + this.size) {
+        if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
+          this.x += 10;
+        }
+        if (mouse.x > this.x && this.x > this.size * 10) {
+          this.x -= 10;
+        }
+        if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
+          this.y += 10;
+        }
+        if (mouse.y > this.y && this.y > this.size * 10) {
+          this.y -= 10;
+        }
+      }
+
+      this.x += this.directionX;
+      this.y += this.directionY;
+
+      this.draw();
+    }
+
+    function initParticles() {
+      particles = [];
+      for (let k = 0; k < maxParticles; k++) {
+        let size = (Math.random() * 2) + 0.5;
+        let x = Math.random() * (canvas.width - size * 2) + size;
+        let y = Math.random() * (canvas.height - size * 2) + size;
+        let directionX = (Math.random() * particleSpeed * 2) - particleSpeed;
+        let directionY = (Math.random() * particleSpeed * 2) - particleSpeed;
+        // Don't set a fixed color here
+        particles.push(new Particle(x, y, directionX, directionY, size));
+      }
+    }
+
+    function animateBackground() {
+      requestAnimationFrame(animateBackground);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let l = 0; l < particles.length; l++) {
+        particles[l].update();
+      }
+      connectParticles();
+    }
+
+    function connectParticles() {
+      let opacity = 1;
+      for (let a = 0; a < particles.length; a++) {
+        for (let b = a; b < particles.length; b++) {
+          let distance = Math.sqrt(
+            ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) +
+            ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y))
+          );
+          if (distance < connectionDistance) {
+            opacity = 1 - (distance / connectionDistance);
+            // Use the global `currentParticleColor` for lines, but adjust alpha
+            ctx.strokeStyle = currentParticleColor.replace('rgb', 'rgba').replace(')', `, ${opacity})`);
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x, particles[a].y);
+            ctx.lineTo(particles[b].x, particles[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    canvas.addEventListener('mousemove', (event) => {
+      mouse.x = event.x;
+      mouse.y = event.y;
+    });
+
+    canvas.addEventListener('mouseout', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    window.addEventListener('load', () => {
+      resizeCanvas();
+      initParticles();
+      animateBackground();
+    });
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initParticles();
+    });
+
+  </script>
+
 </body>
 </html>
