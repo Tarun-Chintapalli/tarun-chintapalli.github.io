@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vaanaprastha — 50 Rural Gems of India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1a1208;--ink2:#2d2318;
+  --cream:#faf8f3;--parchment:#f2ede3;
+  --gold:#c8882a;--gold-lt:#e8b96a;
+  --forest:#1b4332;--forest2:#2d6a4f;--forest3:#52b788;--forest-lt:#d8f3dc;
+  --rust:#a0522d;--rust-lt:#fdf0e8;
+  --slate:#4a5568;--slate-lt:#f7f8fa;
+  --shadow:0 4px 24px rgba(26,18,8,.08);
+  --shadow-lg:0 16px 64px rgba(26,18,8,.14);
+  --shadow-xl:0 32px 96px rgba(26,18,8,.18);
+  --r:2rem;--rl:3rem;--rxl:4rem;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--forest);border-radius:9px}
+::selection{background:var(--forest-lt);color:var(--forest)}
+img{display:block;max-width:100%}
+
+/* NOISE */
+body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.022;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(250,248,243,.93);
+  backdrop-filter:blur(16px);border-bottom:1px solid rgba(200,136,42,.15);
+  padding:0 32px;height:72px;display:flex;justify-content:space-between;align-items:center;
+  box-shadow:0 2px 20px rgba(26,18,8,.06)}
+.nav-logo{display:flex;align-items:center;gap:14px;cursor:pointer}
+.nav-icon{width:42px;height:42px;background:var(--forest);border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(27,67,50,.35);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.nav-icon:hover{transform:rotate(15deg) scale(1.05)}
+.nav-icon svg{color:white;width:20px;height:20px}
+.nav-brand{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;
+  color:var(--forest);letter-spacing:.18em;text-transform:uppercase}
+@media(max-width:580px){.nav-brand{display:none}}
+.nav-btn{display:flex;align-items:center;gap:8px;background:var(--forest);color:white;
+  border:none;cursor:pointer;padding:10px 22px;border-radius:999px;
+  font-size:13px;font-weight:800;font-family:'Nunito',sans-serif;
+  transition:background .2s,transform .15s,box-shadow .2s;
+  box-shadow:0 4px 16px rgba(27,67,50,.3)}
+.nav-btn:hover{background:var(--forest2);transform:translateY(-1px)}
+.nav-btn:active{transform:scale(.97)}
+.nav-btn svg{width:15px;height:15px}
+
+/* VIEWS */
+main{padding-top:72px}
+.view{display:none}.view.active{display:block}
+.container{max-width:1360px;margin:0 auto;padding:0 32px}
+@media(max-width:600px){.container{padding:0 16px}}
+
+/* ── HERO ── */
+.hero{position:relative;margin:20px;border-radius:var(--rxl);overflow:hidden;
+  height:clamp(480px,70vh,680px);background:var(--forest);
+  display:flex;align-items:flex-end;box-shadow:var(--shadow-xl)}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transition:transform 18s ease}
+.hero:hover .hero-img{transform:scale(1.05)}
+.hero-grad{position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(27,67,50,.85) 0%,transparent 55%),
+  linear-gradient(to top,rgba(26,18,8,.95) 0%,transparent 50%)}
+.hero-content{position:relative;z-index:2;padding:clamp(32px,5vw,72px);max-width:760px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;
+  border:1px solid rgba(232,185,106,.35);border-radius:999px;margin-bottom:28px;
+  background:rgba(255,255,255,.07);backdrop-filter:blur(8px)}
+.hero-eyebrow span{font-size:10px;font-weight:900;letter-spacing:.35em;text-transform:uppercase;color:var(--gold-lt)}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--gold-lt);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(52px,8vw,100px);font-weight:900;
+  color:white;line-height:.92;margin-bottom:32px;text-shadow:0 4px 32px rgba(0,0,0,.3)}
+.hero h1 em{font-style:italic;color:var(--gold-lt)}
+.hero-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.hero-stat{color:rgba(255,255,255,.6);font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px}
+.hero-stat strong{color:white;font-weight:800}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{padding:16px 36px;background:white;color:var(--forest);border:none;
+  border-radius:999px;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:900;
+  font-size:13px;text-transform:uppercase;letter-spacing:.12em;
+  box-shadow:0 8px 32px rgba(0,0,0,.25);transition:transform .25s,box-shadow .25s}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,.3)}
+.btn-secondary{padding:16px 36px;background:rgba(255,255,255,.12);
+  border:1.5px solid rgba(255,255,255,.35);color:white;border-radius:999px;cursor:pointer;
+  font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;
+  text-transform:uppercase;letter-spacing:.12em;backdrop-filter:blur(8px);transition:background .2s}
+.btn-secondary:hover{background:rgba(255,255,255,.2)}
+.hero-scroll{position:absolute;bottom:40px;right:48px;z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  color:rgba(255,255,255,.4);font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.4))}
+
+/* MARQUEE */
+.marquee-strip{background:var(--forest);padding:14px 0;overflow:hidden;
+  display:flex;white-space:nowrap;margin:0 20px;
+  border-radius:0 0 28px 28px;margin-bottom:72px}
+.marquee-track{display:inline-flex;animation:marquee 60s linear infinite}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{display:inline-flex;align-items:center;gap:12px;padding:0 28px;
+  font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.marquee-item .dot{color:var(--gold-lt);opacity:.7}
+
+/* SECTION TAGS */
+.section-tag{display:inline-block;padding:6px 16px;background:var(--forest-lt);
+  border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.25em;
+  text-transform:uppercase;color:var(--forest2);margin-bottom:16px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);
+  font-weight:700;margin-bottom:12px;line-height:1.1}
+.section-sub{color:var(--slate);line-height:1.7;font-size:15px;max-width:520px}
+
+/* MAP */
+.map-section{margin-bottom:96px}
+.map-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;gap:24px;flex-wrap:wrap}
+.map-status-badge{display:flex;align-items:center;gap:10px;padding:10px 20px;
+  background:white;border-radius:16px;border:1px solid var(--forest-lt);
+  box-shadow:var(--shadow);font-size:12px;font-weight:700;color:var(--forest);white-space:nowrap}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--forest3);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(82,183,136,.4)}70%{box-shadow:0 0 0 8px rgba(82,183,136,0)}}
+.map-frame{position:relative;width:100%;aspect-ratio:16/7;background:var(--parchment);
+  border-radius:var(--rxl);overflow:hidden;box-shadow:var(--shadow-xl);border:1px solid rgba(200,136,42,.1)}
+@media(max-width:700px){.map-frame{aspect-ratio:4/5}}
+#map-div{width:100%;height:100%}
+.map-loader{position:absolute;inset:0;z-index:5;background:var(--parchment);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.loader-ring{width:48px;height:48px;border:3px solid rgba(27,67,50,.1);
+  border-top-color:var(--forest);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader-text{font-size:10px;font-weight:900;letter-spacing:.25em;text-transform:uppercase;color:var(--slate)}
+.map-error{position:absolute;inset:0;z-index:6;background:var(--parchment);display:none;
+  flex-direction:column;align-items:center;justify-content:center;padding:48px;text-align:center}
+.map-error-icon{font-size:48px;margin-bottom:16px;opacity:.4}
+.map-error p{font-size:14px;font-weight:700;color:var(--slate);margin-bottom:8px}
+.map-error small{font-size:12px;color:var(--slate);opacity:.6;line-height:1.6}
+
+/* SEARCH BAR */
+.search-bar-wrap{margin-bottom:40px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.search-input-wrap{position:relative;flex:1;min-width:240px}
+.search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--slate);opacity:.5;pointer-events:none}
+.search-input{width:100%;padding:14px 20px 14px 48px;background:white;
+  border:1.5px solid var(--parchment);border-radius:16px;
+  font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:var(--ink);
+  outline:none;transition:border-color .2s,box-shadow .2s;box-shadow:var(--shadow)}
+.search-input:focus{border-color:var(--forest3);box-shadow:0 0 0 3px rgba(82,183,136,.12)}
+.search-input::placeholder{color:var(--slate);opacity:.5}
+.filter-cats{display:flex;gap:8px;flex-wrap:wrap}
+.filter-btn{padding:9px 18px;border-radius:12px;border:1.5px solid var(--parchment);
+  background:white;font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.08em;color:var(--slate);cursor:pointer;
+  transition:all .2s;box-shadow:var(--shadow)}
+.filter-btn:hover{border-color:var(--forest3);color:var(--forest)}
+.filter-btn.active{background:var(--forest);color:white;border-color:var(--forest)}
+
+/* CATALOG */
+.catalog-section{margin-bottom:100px}
+.catalog-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;flex-wrap:wrap;gap:16px}
+.result-count{font-size:13px;font-weight:700;color:var(--slate);opacity:.6}
+.gems-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+@media(max-width:1300px){.gems-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:1000px){.gems-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.gems-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:440px){.gems-grid{grid-template-columns:1fr}}
+
+.gem-card{cursor:pointer;transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.gem-card:hover{transform:translateY(-5px)}
+.gem-card-visual{position:relative;aspect-ratio:3/4;border-radius:var(--rl);
+  overflow:hidden;margin-bottom:14px;box-shadow:0 8px 28px rgba(26,18,8,.12)}
+.gem-card-visual img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.gem-card:hover .gem-card-visual img{transform:scale(1.08)}
+.gem-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,18,8,.88) 0%,transparent 55%)}
+.gem-card-cats{position:absolute;top:14px;left:14px;display:flex;gap:5px;flex-wrap:wrap}
+.gem-cat-tag{padding:3px 8px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);
+  border-radius:999px;font-size:8px;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;color:white;border:1px solid rgba(255,255,255,.2)}
+.gem-card-info{position:absolute;bottom:18px;left:18px;right:18px}
+.gem-card-state{color:var(--gold-lt);font-size:9px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin-bottom:4px;display:block}
+.gem-card-name{color:white;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;line-height:1.2}
+
+/* STRIP */
+.featured-strip{margin-bottom:100px;padding:56px;background:var(--forest);
+  border-radius:var(--rxl);display:grid;grid-template-columns:1fr 1fr;gap:48px;
+  align-items:center;box-shadow:var(--shadow-xl);position:relative;overflow:hidden}
+@media(max-width:800px){.featured-strip{grid-template-columns:1fr;padding:36px}}
+.featured-strip::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;
+  border-radius:50%;background:rgba(255,255,255,.04)}
+.strip-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,42px);font-weight:700;color:white;line-height:1.1;margin-bottom:16px}
+.strip-title em{font-style:italic;color:var(--gold-lt)}
+.strip-sub{color:rgba(255,255,255,.5);font-size:14px;line-height:1.8;margin-bottom:28px}
+.strip-stats{display:flex;gap:32px;flex-wrap:wrap}
+.strip-stat .num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--gold-lt);display:block}
+.strip-stat .lbl{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.strip-images{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.strip-img{border-radius:18px;overflow:hidden;aspect-ratio:1/1}
+.strip-img img{width:100%;height:100%;object-fit:cover}
+.strip-img:first-child{aspect-ratio:2/1.4;grid-column:1/-1}
+
+/* ── DETAILS ── */
+.details-wrap{max-width:1280px;margin:0 auto;padding:40px 32px}
+@media(max-width:600px){.details-wrap{padding:24px 16px}}
+.back-btn{display:inline-flex;align-items:center;gap:10px;margin-bottom:36px;
+  padding:10px 20px;background:white;border:1.5px solid rgba(200,136,42,.2);
+  border-radius:999px;cursor:pointer;font-size:11px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.15em;color:var(--slate);
+  transition:all .2s;box-shadow:var(--shadow)}
+.back-btn:hover{color:var(--forest);border-color:var(--forest);transform:translateX(-2px)}
+.back-btn svg{width:15px;height:15px}
+
+.details-hero-strip{position:relative;border-radius:var(--rxl);overflow:hidden;
+  aspect-ratio:21/8;margin-bottom:56px;box-shadow:var(--shadow-xl)}
+@media(max-width:800px){.details-hero-strip{aspect-ratio:16/9}}
+.details-hero-strip img{width:100%;height:100%;object-fit:cover}
+.details-hero-strip-overlay{position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(26,18,8,.82) 0%,transparent 62%),
+  linear-gradient(to top,rgba(26,18,8,.6) 0%,transparent 50%)}
+.details-hero-text{position:absolute;bottom:44px;left:52px;right:50%}
+@media(max-width:700px){.details-hero-text{left:24px;right:24px;bottom:24px}}
+.d-state-label{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;
+  background:rgba(200,136,42,.25);border:1px solid rgba(232,185,106,.4);border-radius:999px;
+  font-size:10px;font-weight:900;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:14px}
+.d-state-label svg{width:11px;height:11px}
+.d-hero-name{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,68px);
+  font-weight:900;color:white;line-height:.95;margin-bottom:10px}
+.d-hero-subtitle{color:rgba(255,255,255,.62);font-size:15px;font-style:italic;font-family:'Playfair Display',serif}
+.details-verified{position:absolute;top:28px;right:28px;display:flex;align-items:center;gap:8px;
+  padding:9px 16px;background:rgba(27,67,50,.9);backdrop-filter:blur(12px);border-radius:14px;
+  font-size:10px;font-weight:800;color:#6ee7b7;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid rgba(82,183,136,.25)}
+.details-verified svg{width:12px;height:12px;fill:#6ee7b7}
+
+.details-main{display:grid;grid-template-columns:1fr 360px;gap:52px;margin-bottom:64px}
+@media(max-width:1000px){.details-main{grid-template-columns:1fr;gap:36px}}
+
+.d-desc{font-size:16px;line-height:1.9;color:var(--slate);margin-bottom:40px;
+  padding-left:22px;border-left:3px solid var(--gold)}
+
+.info-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:40px}
+@media(max-width:600px){.info-row{grid-template-columns:1fr}}
+.info-card{padding:28px;border-radius:var(--r);overflow:hidden}
+.info-card.food{background:var(--forest-lt);border:1px solid rgba(82,183,136,.2)}
+.info-card.calendar{background:var(--rust-lt);border:1px solid rgba(160,82,45,.12)}
+.info-card-head{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.2em;
+  margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.info-card.food .info-card-head{color:var(--forest)}
+.info-card.calendar .info-card-head{color:var(--rust)}
+.info-card-head svg{width:17px;height:17px}
+.food-item{margin-bottom:18px}.food-item:last-child{margin-bottom:0}
+.food-name{font-weight:800;color:var(--ink);margin-bottom:3px}
+.food-desc{font-size:13px;color:var(--slate);line-height:1.6}
+.cal-item{display:flex;align-items:center;gap:14px;background:white;
+  padding:12px 14px;border-radius:13px;margin-bottom:9px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.cal-item:last-child{margin-bottom:0}
+.cal-emoji{font-size:22px}
+.cal-month{font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:2px}
+.cal-event{font-size:12px;font-weight:700;color:var(--ink)}
+
+/* SPOTS */
+.spots-section{margin-bottom:40px}
+.spots-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;
+  margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.spots-title::after{content:'';flex:1;height:1px;background:var(--parchment)}
+.spots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:700px){.spots-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.spots-grid{grid-template-columns:1fr}}
+.spot-card{border-radius:18px;overflow:hidden;cursor:pointer;
+  box-shadow:var(--shadow);background:white;transition:transform .3s,box-shadow .3s}
+.spot-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.spot-img{aspect-ratio:4/3;overflow:hidden;position:relative}
+.spot-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.spot-card:hover .spot-img img{transform:scale(1.08)}
+.spot-type-badge{position:absolute;top:9px;left:9px;padding:3px 9px;border-radius:999px;
+  font-size:8px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;
+  background:rgba(26,18,8,.65);backdrop-filter:blur(6px);color:white}
+.spot-info{padding:12px 14px}
+.spot-name{font-weight:800;font-size:13px;color:var(--ink);margin-bottom:2px}
+.spot-detail{font-size:11px;color:var(--slate)}
+
+/* LOGISTICS */
+.logistics-card{background:white;border-radius:var(--rl);padding:32px;
+  box-shadow:var(--shadow-xl);border:1px solid rgba(200,136,42,.08);position:sticky;top:92px}
+.logistics-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;
+  margin-bottom:24px;display:flex;align-items:center;gap:10px;color:var(--ink)}
+.logistics-title svg{width:19px;height:19px;color:var(--forest2)}
+.info-pills{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.info-pill{background:var(--parchment);border-radius:14px;padding:16px}
+.info-pill-label{font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.18em;color:var(--slate);margin-bottom:5px}
+.info-pill-val{font-weight:900;color:var(--ink);font-size:15px}
+.btn-maps{width:100%;padding:16px;border:none;cursor:pointer;background:var(--forest);
+  color:white;border-radius:16px;font-family:'Nunito',sans-serif;font-weight:900;font-size:11px;
+  text-transform:uppercase;letter-spacing:.12em;display:flex;align-items:center;
+  justify-content:center;gap:10px;transition:background .2s,box-shadow .2s;
+  box-shadow:0 8px 24px rgba(27,67,50,.3);margin-bottom:24px}
+.btn-maps:hover{background:var(--forest2)}
+.btn-maps svg{width:14px;height:14px}
+.hotel-sep{border:none;border-top:1px solid var(--parchment);margin-bottom:20px}
+.hotels-label{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.18em;color:var(--slate);opacity:.45;margin-bottom:14px}
+.hotel-item{padding:18px;background:var(--forest-lt);border-radius:16px;
+  margin-bottom:12px;border:1px solid rgba(82,183,136,.15);transition:border-color .2s}
+.hotel-item:hover{border-color:rgba(82,183,136,.35)}
+.hotel-item:last-child{margin-bottom:0}
+.hotel-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.hotel-name{font-weight:800;color:var(--forest);font-size:13px;margin-bottom:4px}
+.hotel-stars{display:flex;gap:2px}
+.hotel-stars svg{width:10px;height:10px}
+.star-on{fill:#f59e0b;color:#f59e0b}
+.star-off{color:var(--parchment)}
+.hotel-price{font-weight:900;font-size:11px;color:var(--forest2)}
+.btn-book{width:100%;padding:10px;background:white;border:1.5px solid rgba(27,67,50,.15);
+  border-radius:11px;cursor:pointer;font-family:'Nunito',sans-serif;font-size:10px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;
+  justify-content:center;gap:7px;transition:all .2s;color:var(--forest)}
+.btn-book:hover{background:var(--forest);color:white;border-color:var(--forest)}
+.btn-book svg{width:10px;height:10px;opacity:.5}
+
+/* ── PLANNER ── */
+.planner-page{max-width:900px;margin:0 auto;padding:60px 32px}
+@media(max-width:600px){.planner-page{padding:40px 16px}}
+.planner-head{text-align:center;margin-bottom:56px}
+.planner-head h2{font-family:'Playfair Display',serif;font-size:clamp(40px,6vw,64px);font-weight:900;color:var(--ink);margin-bottom:14px;line-height:1}
+.planner-head p{color:var(--slate);font-size:16px;line-height:1.7}
+.planner-form{background:white;border-radius:var(--rxl);padding:clamp(36px,6vw,64px);
+  box-shadow:var(--shadow-xl);border:1px solid rgba(200,136,42,.08);position:relative;overflow:hidden}
+.planner-form::after{content:'';position:absolute;top:0;left:0;width:4px;height:100%;
+  background:linear-gradient(to bottom,var(--forest),var(--gold))}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:44px}
+@media(max-width:600px){.form-grid{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:10px}
+.form-label{font-size:10px;font-weight:900;letter-spacing:.28em;text-transform:uppercase;color:var(--slate)}
+.input-wrap{position:relative}
+.input-icon-el{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:19px;height:19px;color:var(--forest2);pointer-events:none}
+input[type=number],select{width:100%;padding:18px 18px 18px 48px;background:var(--parchment);
+  border:2px solid transparent;border-radius:16px;font-family:'Nunito',sans-serif;
+  font-size:22px;font-weight:800;color:var(--ink);outline:none;appearance:none;transition:border-color .2s,box-shadow .2s}
+input[type=number]:focus,select:focus{border-color:var(--forest3);box-shadow:0 0 0 4px rgba(82,183,136,.12)}
+.select-chevron{position:absolute;right:18px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--slate);pointer-events:none;opacity:.5}
+.cats-label{font-size:10px;font-weight:900;letter-spacing:.28em;text-transform:uppercase;color:var(--slate);text-align:center;margin-bottom:20px}
+.cats-wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:44px}
+.cat-btn{padding:10px 20px;border-radius:13px;cursor:pointer;font-family:'Nunito',sans-serif;
+  font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;
+  border:2px solid var(--parchment);background:var(--slate-lt);color:var(--slate);transition:all .2s}
+.cat-btn:hover{border-color:var(--forest3);color:var(--forest)}
+.cat-btn.active{background:var(--forest);color:white;border-color:var(--forest);box-shadow:0 6px 20px rgba(27,67,50,.25)}
+.btn-search{width:100%;padding:22px;background:var(--forest);color:white;border:none;
+  border-radius:22px;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;
+  text-transform:uppercase;letter-spacing:.28em;display:flex;align-items:center;
+  justify-content:center;gap:14px;transition:background .2s,box-shadow .2s;
+  box-shadow:0 12px 40px rgba(27,67,50,.3)}
+.btn-search:hover{background:var(--forest2)}
+.btn-search:disabled{opacity:.5;cursor:not-allowed}
+.btn-search svg{width:19px;height:19px}
+
+/* ── RESULTS ── */
+.results-page{max-width:1360px;margin:0 auto;padding:56px 32px}
+@media(max-width:600px){.results-page{padding:40px 16px}}
+.results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:56px;gap:24px;flex-wrap:wrap}
+.results-header h2{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,52px);font-weight:700;margin-bottom:8px}
+.results-header p{color:var(--slate);font-size:14px}
+.btn-reset{display:flex;align-items:center;gap:10px;padding:12px 22px;background:var(--parchment);
+  border:none;border-radius:999px;cursor:pointer;font-family:'Nunito',sans-serif;
+  font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);transition:background .2s}
+.btn-reset:hover{background:var(--forest-lt)}
+.btn-reset svg{width:14px;height:14px}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+@media(max-width:1200px){.results-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){.results-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.results-grid{grid-template-columns:1fr}}
+.result-card{background:white;border-radius:var(--rl);overflow:hidden;
+  border:1px solid var(--parchment);transition:box-shadow .4s,transform .3s;
+  cursor:pointer;display:flex;flex-direction:column}
+.result-card:hover{box-shadow:var(--shadow-xl);transform:translateY(-5px)}
+.result-card-img{position:relative;aspect-ratio:16/9;overflow:hidden}
+.result-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.5s ease}
+.result-card:hover .result-card-img img{transform:scale(1.08)}
+.match-badge{position:absolute;top:16px;left:16px;padding:5px 12px;
+  background:rgba(255,255,255,.95);border-radius:9px;font-size:9px;font-weight:900;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink);box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.result-card-body{padding:24px;flex-grow:1;display:flex;flex-direction:column}
+.result-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.result-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:3px}
+.result-state{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--slate);opacity:.55}
+.result-time{display:flex;align-items:center;gap:5px;color:var(--forest2);font-weight:800;font-size:11px;white-space:nowrap}
+.result-time svg{width:13px;height:13px}
+.result-desc{color:var(--slate);font-size:12px;line-height:1.7;flex-grow:1;margin-bottom:20px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.btn-explore{width:100%;padding:13px;background:var(--forest-lt);color:var(--forest);
+  border:none;border-radius:14px;cursor:pointer;font-family:'Nunito',sans-serif;
+  font-weight:900;font-size:10px;text-transform:uppercase;letter-spacing:.1em;
+  display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,color .2s}
+.result-card:hover .btn-explore{background:var(--forest);color:white}
+.btn-explore svg{width:14px;height:14px}
+
+/* FOOTER */
+footer{background:var(--ink2);color:rgba(255,255,255,.5);padding:72px 32px 40px}
+.footer-inner{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:2.5fr 1fr 1fr;gap:56px;margin-bottom:56px}
+@media(max-width:800px){.footer-inner{grid-template-columns:1fr;gap:36px}}
+.footer-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:white;letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px}
+.footer-tagline{font-size:13px;line-height:1.8;color:rgba(255,255,255,.3);max-width:380px;margin-bottom:22px}
+.footer-socials{display:flex;gap:8px}
+.footer-soc{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;
+  cursor:pointer;color:rgba(255,255,255,.35);transition:background .2s,color .2s}
+.footer-soc:hover{background:var(--forest2);color:white}
+.footer-col h4{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.18);margin-bottom:18px}
+.footer-col li{list-style:none;font-size:13px;color:rgba(255,255,255,.28);margin-bottom:9px;cursor:pointer;transition:color .2s}
+.footer-col li:hover{color:rgba(255,255,255,.65)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:28px;text-align:center;font-size:12px;color:rgba(255,255,255,.18);max-width:1360px;margin:0 auto}
+
+/* ANIM */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .6s cubic-bezier(.22,1,.36,1) both}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.92);
+  align-items:center;justify-content:center;padding:24px}
+.lightbox.open{display:flex}
+.lightbox-img{max-width:90vw;max-height:85vh;border-radius:14px;object-fit:contain;box-shadow:0 32px 80px rgba(0,0,0,.5)}
+.lightbox-close{position:absolute;top:24px;right:24px;width:46px;height:46px;
+  background:rgba(255,255,255,.1);border-radius:50%;border:none;cursor:pointer;
+  color:white;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-close:hover{background:rgba(255,255,255,.2)}
+.lightbox-close svg{width:20px;height:20px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo" onclick="showView('landing')">
+    <div class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+    </div>
+    <span class="nav-brand">Vaanaprastha</span>
+  </div>
+  <button class="nav-btn" onclick="showView('planner')">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    Trip Planner
+  </button>
+</nav>
+
+<main>
+
+<!-- LANDING -->
+<div id="view-landing" class="view active">
+  <div class="hero">
+    <img class="hero-img" src="https://t4.ftcdn.net/jpg/01/64/62/13/360_F_164621341_vA1ZtJNeXpctAy7ASvEMtl5R6RG1pzOa.jpg" alt="Rural India landscape"/>
+    <div class="hero-grad"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow"><div class="hero-dot"></div><span>50 Rural Gems · Across 22 States</span></div>
+      <h1>Tradition,<br><em>Untethered.</em></h1>
+      <div class="hero-meta">
+        <div class="hero-stat"><strong>50</strong>&nbsp;Heritage Villages</div>
+        <div class="hero-stat">·</div>
+        <div class="hero-stat"><strong>22</strong>&nbsp;States &amp; UTs</div>
+        <div class="hero-stat">·</div>
+        <div class="hero-stat"><strong>300+</strong>&nbsp;Tourist Spots</div>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="document.getElementById('map-section').scrollIntoView({behavior:'smooth'})">Explore the Map</button>
+        <button class="btn-secondary" onclick="showView('planner')">Plan My Journey</button>
+      </div>
+    </div>
+    <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
+  </div>
+
+  <div class="marquee-strip"><div class="marquee-track" id="marquee-track"></div></div>
+
+  <div class="container">
+    <!-- MAP -->
+    <div id="map-section" class="map-section">
+      <div class="map-header">
+        <div>
+          <div class="section-tag">Geographic Network</div>
+          <h2 class="section-title">50 Villages on One Map</h2>
+          <p class="section-sub">Every destination plotted across India. Click any marker to open that village's full guide.</p>
+        </div>
+        <div class="map-status-badge"><div class="pulse"></div>Google Maps JS API</div>
+      </div>
+      <div class="map-frame">
+        <div id="map-loader" class="map-loader">
+          <div class="loader-ring"></div>
+          <div class="loader-text">Loading Map…</div>
+        </div>
+        <div id="map-error" class="map-error">
+          <div class="map-error-icon">🗺️</div>
+          <p>Google Maps requires an API key</p>
+          <small>Add your key to the GOOGLE_MAPS_API_KEY variable in the script. All 50 destination cards below are fully functional.</small>
+        </div>
+        <div id="map-div"></div>
+      </div>
+    </div>
+
+    <!-- CATALOG -->
+    <section class="catalog-section">
+      <div class="catalog-head">
+        <div>
+          <div class="section-tag">Heritage Catalog</div>
+          <h2 class="section-title">All 50 Rural Gems</h2>
+        </div>
+        <span class="result-count" id="catalog-count">Showing all 50 villages</span>
+      </div>
+      <div class="search-bar-wrap">
+        <div class="search-input-wrap">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="search-input" id="catalog-search" placeholder="Search villages, states, categories…" oninput="filterCatalog()"/>
+        </div>
+        <div class="filter-cats" id="catalog-filter-cats"></div>
+      </div>
+      <div class="gems-grid" id="catalog-grid"></div>
+    </section>
+
+    <div class="featured-strip">
+      <div>
+        <h2 class="strip-title">Why <em>slow travel</em> matters more than ever</h2>
+        <p class="strip-sub">India's rural heartland holds 70% of its cultural heritage yet receives less than 5% of tourist footfall. Vaanaprastha is here to change that — one authentic journey at a time.</p>
+        <div class="strip-stats">
+          <div class="strip-stat"><span class="num">50</span><span class="lbl">Curated villages</span></div>
+          <div class="strip-stat"><span class="num">22</span><span class="lbl">States</span></div>
+          <div class="strip-stat"><span class="num">300+</span><span class="lbl">Experiences</span></div>
+        </div>
+      </div>
+      <div class="strip-images">
+        <div class="strip-img"><img src="https://miro.medium.com/v2/resize:fit:1400/0*0dhOmVndURsyA4gU" alt="Village life" loading="lazy"/></div>
+        <div class="strip-img"><img src="https://cdn1.tripoto.com/media/filter/tst/img/109540/Image/1701227496_img_0455.jpeg.webp" alt="Craft" loading="lazy"/></div>
+        <div class="strip-img"><img src="https://hblimg.mmtcdn.com/content/hubble/img/goa/mmt/destination/m_destination-goa-landscape_l_400_640.jpg" alt="Nature" loading="lazy"/></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DETAILS -->
+<div id="view-details" class="view">
+  <div class="details-wrap fade-up">
+    <button class="back-btn" onclick="showView('landing')">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to All Villages
+    </button>
+    <div class="details-hero-strip">
+      <img id="d-hero-img" src="" alt=""/>
+      <div class="details-hero-strip-overlay"></div>
+      <div class="details-hero-text">
+        <div class="d-state-label">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="d-state-label"></span>
+        </div>
+        <div class="d-hero-name" id="d-hero-name"></div>
+        <div class="d-hero-subtitle" id="d-hero-subtitle"></div>
+      </div>
+      <div class="details-verified">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Community Verified
+      </div>
+    </div>
+    <div class="details-main">
+      <div>
+        <p class="d-desc" id="d-desc"></p>
+        <div class="info-row">
+          <div class="info-card food">
+            <div class="info-card-head">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+              Local Flavors
+            </div>
+            <div id="d-food"></div>
+          </div>
+          <div class="info-card calendar">
+            <div class="info-card-head">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Cultural Calendar
+            </div>
+            <div id="d-calendar"></div>
+          </div>
+        </div>
+        <div class="spots-section">
+          <h3 class="spots-title">Must-Visit Spots</h3>
+          <div class="spots-grid" id="d-spots-grid"></div>
+        </div>
+      </div>
+      <div>
+        <div class="logistics-card">
+          <div class="logistics-title">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Getting There
+          </div>
+          <div class="info-pills">
+            <div class="info-pill"><div class="info-pill-label">Distance</div><div class="info-pill-val" id="d-distance"></div></div>
+            <div class="info-pill"><div class="info-pill-label">Drive Time</div><div class="info-pill-val" id="d-time"></div></div>
+          </div>
+          <button class="btn-maps" id="d-route-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+            Open in Google Maps
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </button>
+          <hr class="hotel-sep"/>
+          <div class="hotels-label">Where to Stay</div>
+          <div id="d-hotels"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PLANNER -->
+<div id="view-planner" class="view">
+  <div class="planner-page">
+    <div class="planner-head">
+      <div class="section-tag" style="display:inline-block;margin-bottom:14px">Build Your Trip</div>
+      <h2>Itinerary Architect</h2>
+      <p>Set your preferences. Discover perfectly matched rural destinations.</p>
+    </div>
+    <div class="planner-form">
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label">Total Budget (₹)</label>
+          <div class="input-wrap">
+            <svg class="input-icon-el" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12M6 8h12M6 13l8.5 8M6 13h3a4 4 0 0 0 0-8"/></svg>
+            <input type="number" id="input-budget" value="50000" min="1000" step="5000"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Travelers</label>
+          <div class="input-wrap">
+            <svg class="input-icon-el" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <select id="input-adults">
+              <option>1 Traveler</option><option selected>2 Travelers</option>
+              <option>3 Travelers</option><option>4 Travelers</option>
+              <option>5 Travelers</option><option>6 Travelers</option>
+              <option>8 Travelers</option><option>10 Travelers</option>
+            </select>
+            <svg class="select-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="cats-label">Filter by Interest</div>
+      <div class="cats-wrap" id="planner-cats"></div>
+      <button class="btn-search" id="btn-search" onclick="runSearch()">
+        Discover Destinations
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div id="view-results" class="view">
+  <div class="results-page fade-up">
+    <div class="results-header">
+      <div><h2>Matching Destinations</h2><p id="results-count"></p></div>
+      <button class="btn-reset" onclick="showView('planner')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        Adjust Filters
+      </button>
+    </div>
+    <div class="results-grid" id="results-grid"></div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Vaanaprastha</div>
+      <p class="footer-tagline">50 rural heritage destinations curated for India's most curious travellers. Explore authentically, tread lightly.</p>
+      <div class="footer-socials"><div class="footer-soc">FB</div><div class="footer-soc">IG</div><div class="footer-soc">TW</div><div class="footer-soc">YT</div></div>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul>
+      <li>High Altitude Villages</li><li>River Island Stays</li>
+      <li>Desert Outposts</li><li>Coastal Ruins</li><li>Forest Retreats</li>
+    </ul></div>
+    <div class="footer-col"><h4>Community</h4><ul>
+      <li>Become a Local Guide</li><li>Host a Hamlet</li>
+      <li>Artisan Partnership</li><li>Slow Travel FAQ</li><li>Impact Report 2024</li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© 2025 Vaanaprastha. All rights reserved. Crafted with care for India's living heritage.</div>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="" onclick="event.stopPropagation()"/>
+</div>
+
+<script>
+const GOOGLE_MAPS_API_KEY = "AIzaSyC3wGwef-OjqUZbRpxrczAoWvumhDg2cxM"; // ← Add your Google Maps API key here
+
+// ─── IMAGE POOLS BY REGION/TYPE (all verified Unsplash IDs) ───
+// Northeast India — lush green hills, rice terraces, tribal culture
+const IMG = {
+  ne_hills:   'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1600&auto=format&fit=crop&q=80',
+  ne_valley:  'https://images.unsplash.com/photo-1585016495481-91edd4c26b21?w=1600&auto=format&fit=crop&q=80',
+  ne_paddy:   'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&auto=format&fit=crop&q=80',
+  ne_forest:  'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1600&auto=format&fit=crop&q=80',
+  ne_mist:    'https://images.unsplash.com/photo-1511497584788-876760111969?w=1600&auto=format&fit=crop&q=80',
+  // Himalaya — snow peaks, alpine meadows, mountain villages
+  hima_high:  'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&auto=format&fit=crop&q=80',
+  hima_lake:  'https://images.unsplash.com/photo-1512273222628-4daea6e55abb?w=1600&auto=format&fit=crop&q=80',
+  hima_meadow:'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=1600&auto=format&fit=crop&q=80',
+  hima_valley:'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1600&auto=format&fit=crop&q=80',
+  hima_river: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&auto=format&fit=crop&q=80',
+  // Rajasthan — dunes, desert, havelis
+  raj_dunes:  'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600&auto=format&fit=crop&q=80',
+  raj_desert: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&auto=format&fit=crop&q=80',
+  raj_village:'https://images.unsplash.com/photo-1533097770082-1d5b8f14e6b4?w=1600&auto=format&fit=crop&q=80',
+  raj_fort:   'https://images.unsplash.com/photo-1557159557-7a93b8db7a14?w=1600&auto=format&fit=crop&q=80',
+  // South India — beaches, temples, plantations
+  south_beach:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&auto=format&fit=crop&q=80',
+  south_cliff: 'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1600&auto=format&fit=crop&q=80',
+  south_plant:'https://images.unsplash.com/photo-1562602833-0f4ab2fc46e3?w=1600&auto=format&fit=crop&q=80',
+  south_rain: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1600&auto=format&fit=crop&q=80',
+  south_backw:'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=1600&auto=format&fit=crop&q=80',
+  // Karnataka/Deccan — boulders, ruins, forests
+  kar_boulder:'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600&auto=format&fit=crop&q=80',
+  kar_coffee: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&auto=format&fit=crop&q=80',
+  // Gujarat — white desert, kutchi crafts
+  guj_rann:   'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600&auto=format&fit=crop&q=80',
+  guj_craft:  'https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=1600&auto=format&fit=crop&q=80',
+  // Waterfalls / nature
+  waterfall:  'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=1600&auto=format&fit=crop&q=80',
+  // Textile / weave
+  textile:    'https://images.unsplash.com/photo-1558171813-0b08e8a40dcf?w=1600&auto=format&fit=crop&q=80',
+  // Heritage architecture
+  heritage:   'https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1600&auto=format&fit=crop&q=80',
+  // Odisha coast
+  odi_coast:  'https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?w=1600&auto=format&fit=crop&q=80',
+  // Madhya Pradesh jungle
+  mp_jungle:  'https://images.unsplash.com/photo-1587502537104-aac10f5fb6f7?w=1600&auto=format&fit=crop&q=80',
+  // Chhattisgarh forest
+  chh_forest: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1600&auto=format&fit=crop&q=80',
+  // General rural India
+  rural1:     'https://images.unsplash.com/photo-1609340056671-b88c8db5acd5?w=1600&auto=format&fit=crop&q=80',
+  rural2:     'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&auto=format&fit=crop&q=80',
+};
+
+// Spot image pools by type
+const SPOT_IMGS = {
+  waterfall:  ['https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=600&auto=format&fit=crop&q=70'],
+  mountain:   ['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&auto=format&fit=crop&q=70'],
+  forest:     ['https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1518791841217-8f162f1912da?w=600&auto=format&fit=crop&q=70'],
+  beach:      ['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=600&auto=format&fit=crop&q=70'],
+  heritage:   ['https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1564399580075-5dfe19c205f3?w=600&auto=format&fit=crop&q=70'],
+  cave:       ['https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&auto=format&fit=crop&q=70'],
+  craft:      ['https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&auto=format&fit=crop&q=70'],
+  temple:     ['https://images.unsplash.com/photo-1561409106-46c5c1a4d01f?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1548013146-72479768bbaa?w=600&auto=format&fit=crop&q=70'],
+  wildlife:   ['https://images.unsplash.com/photo-1444464666168-49d633b86797?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=600&auto=format&fit=crop&q=70'],
+  valley:     ['https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&auto=format&fit=crop&q=70'],
+  lake:       ['https://images.unsplash.com/photo-1512273222628-4daea6e55abb?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=600&auto=format&fit=crop&q=70'],
+  desert:     ['https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&auto=format&fit=crop&q=70'],
+  market:     ['https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1619894991209-9f9694be045a?w=600&auto=format&fit=crop&q=70'],
+  ruins:      ['https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=70'],
+  paddy:      ['https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=70','https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&auto=format&fit=crop&q=70'],
+};
+function si(type,i=0){ const pool=SPOT_IMGS[type]||SPOT_IMGS.heritage; return pool[i%pool.length]; }
+
+// ─── 50 DESTINATIONS ───────────────────────────────────────────
+const GEMS = [
+  // 1 ── ANDHRA PRADESH
+  { id:'lambasingi', name:'Lambasingi', state:'Andhra Pradesh', title:'The Kashmir of Andhra',
+    category:['Hill station','Nature'], position:{lat:17.6015,lng:82.4939},
+    distance:'600 km', time:'11h', heroImage: IMG.south_plant,
+    description:"Perched at 1,000m above sea level in the Eastern Ghats, Lambasingi is the only place in South India where temperatures plunge near freezing in winter. Vast strawberry farms, coffee plantations, and apple orchards swathe these mist-drenched slopes in perpetual emerald.",
+    food:[{name:'Bamboo Chicken',desc:'Chicken marinated and slow-cooked sealed inside fresh bamboo over open fire — a tribal Araku specialty.'},{name:'Araku Organic Coffee',desc:'Award-winning tribal-grown coffee with low acidity and chocolatey depth.'}],
+    hotels:[{name:'APTDC Haritha Resort',price:'₹3,500/night',rating:4.2},{name:'Lambasingi Eco Camp',price:'₹2,200/night',rating:4.4}],
+    calendar:[{month:'Dec–Feb',event:'Sub-zero Winter Mist Season',icon:'❄️'},{month:'January',event:'Strawberry Harvest',icon:'🍓'}],
+    spots:[{name:'Kothapalli Waterfalls',type:'Waterfall',detail:'8 km from village',imgType:'waterfall',imgIdx:0},{name:'Araku Valley Viewpoint',type:'Viewpoint',detail:'25 km away',imgType:'valley',imgIdx:0},{name:'Borra Caves',type:'Cave',detail:'Million-year stalactites',imgType:'cave',imgIdx:0},{name:'Coffee Estate Walk',type:'Experience',detail:'Tribal-run farms',imgType:'forest',imgIdx:0},{name:'Sunrise Mist Point',type:'Scenic',detail:'Best Oct–Feb',imgType:'mountain',imgIdx:0},{name:'Susan Garden',type:'Flora',detail:'Misty floral park',imgType:'valley',imgIdx:1}]
+  },
+  // 2 ── ARUNACHAL PRADESH
+  { id:'ziro', name:'Ziro Valley', state:'Arunachal Pradesh', title:'Apatani Cultural Heartland',
+    category:['Nature','Culture'], position:{lat:27.5954,lng:93.8447},
+    distance:'2,400 km', time:'48h', heroImage: IMG.ne_paddy,
+    description:"A UNESCO tentative World Heritage landscape, Ziro cradles the ancient Apatani tribe among pine forests and flooded rice-fish paddies. Their integrated wetland cultivation unchanged for millennia creates a mosaic of emerald terraces and mirror-still water against pine-clad hills.",
+    food:[{name:'Pika Pila',desc:'Fermented bamboo shoot and chilli pickle — the soul of Apatani cuisine eaten at every meal.'},{name:'Apong (Rice Beer)',desc:'Millet-based fermented drink brewed in bamboo, shared during every celebration.'}],
+    hotels:[{name:'Ziro Palace Inn',price:'₹2,800/night',rating:4.5},{name:'Kile Guesthouse',price:'₹1,600/night',rating:4.3}],
+    calendar:[{month:'September',event:'Ziro Music Festival',icon:'🎸'},{month:'March',event:'Myoko Festival (Apatani New Year)',icon:'🔥'}],
+    spots:[{name:'Hong Village Paddy Fields',type:'Cultural',detail:'Apatani terraced fields',imgType:'paddy',imgIdx:0},{name:'Talley Valley Sanctuary',type:'Wildlife',detail:'Clouded leopards & hornbills',imgType:'wildlife',imgIdx:0},{name:'Siddheshwar Nath Temple',type:'Temple',detail:'Ancient Shiva temple',imgType:'temple',imgIdx:0},{name:'Pine Forest Trek',type:'Trekking',detail:'6 km loop trail',imgType:'forest',imgIdx:0},{name:'Dolo Mando',type:'Cultural Site',detail:'Apatani ceremonial ground',imgType:'valley',imgIdx:1},{name:'Tarin Fish Farm',type:'Experience',detail:'Traditional fish cultivation',imgType:'paddy',imgIdx:1}]
+  },
+  // 3 ── ASSAM
+  { id:'majuli', name:'Majuli Island', state:'Assam', title:"World's Largest River Island",
+    category:['History','Culture','Nature'], position:{lat:26.9475,lng:94.1332},
+    distance:'2,200 km', time:'42h', heroImage: IMG.ne_hills,
+    description:"Adrift in the mighty Brahmaputra, Majuli is the world's largest river island and the spiritual nerve centre of Assamese Neo-Vaishnavism. Its 22 active Satras (monasteries) are living universities of dance, theatre, and mask-making that have thrived for 500 years.",
+    food:[{name:'Pitha',desc:'Steamed or fried rice cakes stuffed with coconut or sesame — made in dozens of regional varieties.'},{name:'Masor Tenga',desc:'Tangy Assamese fish curry cooked with tomatoes and lime — a staple of riverine island cooking.'}],
+    hotels:[{name:'Prashanti Eco Cottages',price:'₹1,500/night',rating:4.6},{name:'La Maison de Ananda',price:'₹3,200/night',rating:4.7}],
+    calendar:[{month:'November',event:'Raas Leela Dance Drama',icon:'🎭'},{month:'April',event:'Bohag Bihu (Assamese New Year)',icon:'🥁'}],
+    spots:[{name:'Kamalabari Satra',type:'Monastery',detail:'Sattriya dance performances',imgType:'temple',imgIdx:0},{name:'Brahmaputra Sunset Cruise',type:'Experience',detail:'Dhow boat at dusk',imgType:'lake',imgIdx:0},{name:'Mishing Village',type:'Cultural',detail:'Indigenous stilt-house tribe',imgType:'paddy',imgIdx:0},{name:'Dakhinpat Satra',type:'Heritage',detail:'Oldest Satra on the island',imgType:'heritage',imgIdx:0},{name:'Auniati Satra Museum',type:'Museum',detail:'Rare artefacts & manuscripts',imgType:'heritage',imgIdx:1},{name:'Ratnapur Bird Watch',type:'Wildlife',detail:'50+ migratory species',imgType:'wildlife',imgIdx:1}]
+  },
+  // 4 ── GUJARAT
+  { id:'dhordo', name:'Dhordo', state:'Gujarat', title:'Gateway to the Great Rann',
+    category:['Nature','Culture'], position:{lat:23.8315,lng:69.4975},
+    distance:'1,400 km', time:'24h', heroImage: IMG.guj_rann,
+    description:"On the edge of the Great Rann of Kutch, Dhordo is the gateway to one of the world's most otherworldly landscapes. On full moon nights the salt marsh glows silver to infinity. During Rann Utsav, the village transforms into a vibrant tent city of Kutchi crafts and music.",
+    food:[{name:'Kutchi Dabeli',desc:'The original spiced potato sandwich from Kutch — sweet, tangy, and spicy in every bite.'},{name:'Bajra Rotlo',desc:'Rustic millet flatbread cooked on open flame with pungent raw garlic chutney — a desert staple.'}],
+    hotels:[{name:'Rann Utsav Tent City',price:'₹8,500/night',rating:4.8},{name:'Shaam-e-Sarhad Resort',price:'₹5,500/night',rating:4.9}],
+    calendar:[{month:'Nov–Feb',event:'Rann Utsav Festival',icon:'🎪'},{month:'February',event:'Desert Sufi Night',icon:'🌙'}],
+    spots:[{name:'White Rann at Midnight',type:'Natural Wonder',detail:'Full moon glows silver',imgType:'desert',imgIdx:0},{name:'Kala Dungar Viewpoint',type:'Viewpoint',detail:'Highest point in Kutch',imgType:'mountain',imgIdx:1},{name:'Bhirandiyara Village',type:'Craft',detail:'Embroidery & mirror work',imgType:'craft',imgIdx:0},{name:'Wild Ass Sanctuary',type:'Wildlife',detail:'Endangered Indian wild ass',imgType:'wildlife',imgIdx:0},{name:'Rann Flamingo Colony',type:'Birdwatching',detail:'10,000+ flamingos in season',imgType:'wildlife',imgIdx:1},{name:'India Border Pillar',type:'Landmark',detail:'Closest point to Pakistan',imgType:'desert',imgIdx:1}]
+  },
+  // 5 ── KARNATAKA
+  { id:'anegundi', name:'Anegundi', state:'Karnataka', title:'Mother Village of Hampi',
+    category:['History','Temples','Archeology'], position:{lat:15.3533,lng:76.4867},
+    distance:'350 km', time:'7h', heroImage: IMG.kar_boulder,
+    description:"Predating the Vijayanagara Empire by millennia, Anegundi is believed to be the mythical monkey kingdom Kishkindha from the Ramayana. Its boulder-strewn landscape, banana groves, and ancient temples have survived largely unchanged since the 14th century.",
+    food:[{name:'Obbattu (Holige)',desc:'Sweet flatbread stuffed with jaggery and chickpea paste — Karnataka\'s festival staple.'},{name:'Ragi Mudde',desc:'Finger millet balls served with spicy sambar — the protein-rich staple of rural Karnataka.'}],
+    hotels:[{name:'Uramma Heritage Homes',price:'₹5,500/night',rating:4.9},{name:'Kishkinda Trust Guesthouse',price:'₹2,800/night',rating:4.6}],
+    calendar:[{month:'January',event:'Hampi Utsav',icon:'🐘'},{month:'March',event:'Holi on the Tungabhadra',icon:'🎨'}],
+    spots:[{name:'Anjanadri Hill',type:'Spiritual',detail:'575 steps, panoramic view',imgType:'mountain',imgIdx:0},{name:'Gagan Mahal',type:'Heritage',detail:'14th century royal audience hall',imgType:'heritage',imgIdx:0},{name:'Pampa Sarovar',type:'Sacred Lake',detail:'Mentioned in Ramayana',imgType:'lake',imgIdx:0},{name:'Tungabhadra Coracle',type:'Experience',detail:'Circular basket boats',imgType:'beach',imgIdx:0},{name:'Hampi Ruins (5-min ferry)',type:'UNESCO Site',detail:'World Heritage boulder city',imgType:'ruins',imgIdx:0},{name:'Navabrindavana Island',type:'Temple',detail:'Seven saint samadhis',imgType:'temple',imgIdx:1}]
+  },
+  // 6 ── MEGHALAYA
+  { id:'mawsynram', name:'Mawsynram', state:'Meghalaya', title:"Earth's Wettest Village",
+    category:['Nature','Hill station'], position:{lat:25.2975,lng:91.5825},
+    distance:'2,800 km', time:'52h', heroImage: IMG.ne_mist,
+    description:"Holding the Guinness record for highest average annual rainfall on Earth (11,872mm/year), Mawsynram is a world of waterfalls, sacred groves, and living root bridges woven by the Khasi people from fig tree roots over centuries.",
+    food:[{name:'Jadoh',desc:'Fragrant red rice cooked with pork and turmeric — the quintessential Khasi one-pot comfort dish.'},{name:'Doh-Khlieh',desc:'Pork and onion salad with mustard and ginger — a refreshing Khasi appetiser unique to this region.'}],
+    hotels:[{name:'Mawsynram Forest Rest House',price:'₹2,200/night',rating:4.4},{name:'Sohra Valley Homestay',price:'₹1,400/night',rating:4.5}],
+    calendar:[{month:'July',event:'Behdeinkhlam Plague Festival',icon:'🏮'},{month:'October',event:'Autumn Cloud Festival',icon:'🍂'}],
+    spots:[{name:'Double-Decker Living Root Bridge',type:'Bio-engineering',detail:'500-year woven fig roots',imgType:'forest',imgIdx:1},{name:'Nohkalikai Falls',type:'Waterfall',detail:"India's tallest plunge fall",imgType:'waterfall',imgIdx:0},{name:'Mawjymbuin Cave',type:'Cave',detail:'Natural limestone Shivalinga',imgType:'cave',imgIdx:0},{name:'Sacred Forest of Mawphlang',type:'Sacred Grove',detail:'200-year protected forest',imgType:'forest',imgIdx:0},{name:'Mawsmai Caves',type:'Geology',detail:'Illuminated stalactite caverns',imgType:'cave',imgIdx:1},{name:'Cherrapunjee Viewpoint',type:'Scenic',detail:'Bangladesh plains vista',imgType:'valley',imgIdx:0}]
+  },
+  // 7 ── NAGALAND
+  { id:'khonoma', name:'Khonoma', state:'Nagaland', title:"Asia's First Green Village",
+    category:['Nature','History'], position:{lat:25.6483,lng:94.0183},
+    distance:'2,600 km', time:'50h', heroImage: IMG.ne_valley,
+    description:"Declared Asia's first green village in 1998, Khonoma is an Angami Naga settlement with a warrior history that resisted British conquest multiple times. Its community nature reserve protects Amur Falcons during their remarkable trans-Himalayan migration.",
+    food:[{name:'Galho',desc:'A thick Naga khichdi of rice, pork, and fermented soybean — warming and earthy.'},{name:'Smoked Pork with Akhuni',desc:'Slow-smoked pork with fermented soybean paste and bamboo shoots — Nagaland\'s signature dish.'}],
+    hotels:[{name:'Khonoma Nature Reserve Guesthouse',price:'₹1,800/night',rating:4.7},{name:'Dzükou Valley Homestay',price:'₹1,400/night',rating:4.5}],
+    calendar:[{month:'Dec 1–10',event:'Hornbill Festival',icon:'🦅'},{month:'September',event:'Sekrenyi Purification Festival',icon:'🏹'}],
+    spots:[{name:'Khonoma Nature Reserve',type:'Wildlife',detail:'Amur Falcon migration hub',imgType:'wildlife',imgIdx:0},{name:'Ancient Terrace Fields',type:'Heritage Farming',detail:'Centuries-old cultivation',imgType:'paddy',imgIdx:1},{name:'Khonoma War Memorial',type:'History',detail:'Anglo-Naga conflicts 1847–79',imgType:'heritage',imgIdx:1},{name:'Dzükou Valley Trek',type:'Trekking',detail:'12 km to flower valley',imgType:'valley',imgIdx:1},{name:'Khonoma Morung',type:'Cultural',detail:'Living Angami youth house',imgType:'forest',imgIdx:1},{name:'Japfü Peak',type:'Trekking',detail:'2nd highest in Nagaland',imgType:'mountain',imgIdx:1}]
+  },
+  // 8 ── TAMIL NADU
+  { id:'dhanushkodi', name:'Dhanushkodi', state:'Tamil Nadu', title:"Land's End Ghost Town",
+    category:['Beach','History'], position:{lat:9.1764,lng:79.4447},
+    distance:'1,200 km', time:'22h', heroImage: IMG.south_beach,
+    description:"At the very tip of Pamban Island where the Bay of Bengal meets the Palk Strait, Dhanushkodi is a ghost town obliterated by a 1964 cyclone. Its haunting ruins — church, railway station, post office — jut from sea-lashed sands. Sri Lanka is just 18 km away.",
+    food:[{name:'Pamban Prawn Roast',desc:'Tiger prawns flash-fried with Chettinad spices over wood fire — an explosion of coastal Tamil flavour.'},{name:'Filter Coffee',desc:'Thick, frothy South Indian filter coffee — a non-negotiable ritual at every Rameswaram eatery.'}],
+    hotels:[{name:'Daiwik Hotels Rameswaram',price:'₹4,000/night',rating:4.3},{name:'Hotel Sea View',price:'₹1,800/night',rating:3.9}],
+    calendar:[{month:'January',event:'Pongal Festival at the Shore',icon:'🥣'},{month:'May',event:'Chithirai Festival',icon:'🪔'}],
+    spots:[{name:"Ruined St. Anthony's Church",type:'Ruins',detail:'Cyclone relic from 1964',imgType:'ruins',imgIdx:1},{name:"Land's End — Two-Ocean Point",type:'Natural Wonder',detail:'Two seas meet here',imgType:'beach',imgIdx:0},{name:'Rama Setu Viewpoint',type:'Legend',detail:"Adam's Bridge chain of shoals",imgType:'beach',imgIdx:1},{name:'Pamban Bridge',type:'Engineering',detail:"India's oldest sea bridge",imgType:'ruins',imgIdx:0},{name:'Ramanathaswamy Temple',type:'Temple',detail:'22 sacred theertham corridors',imgType:'temple',imgIdx:0},{name:'Ghost Railway Station',type:'Ruins',detail:'Abandoned 1914 terminus',imgType:'ruins',imgIdx:1}]
+  },
+  // 9 ── TELANGANA
+  { id:'pochampally', name:'Pochampally', state:'Telangana', title:'Silk Capital of India',
+    category:['Culture','History','Archeology'], position:{lat:17.3456,lng:78.8153},
+    distance:'150 km', time:'3h', heroImage: IMG.textile,
+    description:"Pochampally is the birthplace of India's Ikat weaving — a double-resist dyeing process where both warp and weft threads are dyed before weaving, creating the characteristically blurred, kaleidoscopic patterns. Every household in the village operates a loom.",
+    food:[{name:'Sarva Pindi',desc:'Savoury rice flour pancake with peanuts, sesame, and chillies — a uniquely Telangana breakfast.'},{name:'Pappu Charu',desc:'Dal-based thin rasam with tamarind and Telangana spices — everyday soul food of the region.'}],
+    hotels:[{name:'Rural Ikat Homestay',price:'₹1,200/night',rating:4.5},{name:'Hyderabad Weekend Villa',price:'₹3,500/night',rating:4.4}],
+    calendar:[{month:'January',event:'National Handloom Weavers Day',icon:'🧵'},{month:'October',event:'Bathukamma Floral Festival',icon:'🌸'}],
+    spots:[{name:'Ikat Weaving Demonstration',type:'Artisan',detail:'Watch master weavers at work',imgType:'craft',imgIdx:0},{name:'Pochampally Handloom Park',type:'Museum',detail:'History of Indian silk',imgType:'craft',imgIdx:1},{name:'Bhoodan Museum',type:'History',detail:'Vinoba Bhave land movement',imgType:'heritage',imgIdx:1},{name:'Natural Dye Workshop',type:'Experience',detail:'Hands-on dye extraction',imgType:'market',imgIdx:0},{name:'Fabric Market',type:'Shopping',detail:'Buy directly from weavers',imgType:'market',imgIdx:1},{name:'Yadagirigutta Temple (30km)',type:'Temple',detail:'Narasimha hill shrine',imgType:'temple',imgIdx:1}]
+  },
+  // 10 ── CHHATTISGARH
+  { id:'chitrakote', name:'Chitrakote', state:'Chhattisgarh', title:"India's Niagara Falls",
+    category:['Nature'], position:{lat:19.2014,lng:81.6736},
+    distance:'800 km', time:'16h', heroImage: IMG.waterfall,
+    description:"On the Indravati river deep in Bastar's forests, Chitrakote Falls thunders across a 300-metre-wide horseshoe cliff — India's widest waterfall. During monsoon the volume is staggering; in dry season the falls split to reveal vivid rust-coloured rock formations.",
+    food:[{name:'Chhaprah (Red Ant Chutney)',desc:'Weaver ants ground with garlic and chillies into a powerfully sour, protein-rich Bastar delicacy.'},{name:'Bore Baasi',desc:'Overnight-soaked fermented rice eaten cold with raw onion — the energy food of rural Chhattisgarh.'}],
+    hotels:[{name:'Dandami Luxury Resort',price:'₹4,500/night',rating:4.1},{name:'Bastar Jungle Camp',price:'₹2,600/night',rating:4.3}],
+    calendar:[{month:'October',event:'Bastar Dussehra (75-day festival)',icon:'👺'},{month:'February',event:'Madi Festival of Bastar',icon:'🥁'}],
+    spots:[{name:'Chitrakote Falls Monsoon View',type:'Waterfall',detail:"India's widest waterfall",imgType:'waterfall',imgIdx:0},{name:'Tirathgarh Falls',type:'Waterfall',detail:'300ft multi-tiered cascade',imgType:'waterfall',imgIdx:1},{name:'Kanger Valley National Park',type:'Wildlife',detail:'Wild bison & cave fish',imgType:'wildlife',imgIdx:0},{name:'Kutumsar Caves',type:'Geology',detail:'Blind cave fish species',imgType:'cave',imgIdx:1},{name:'Bastar Palace Jagdalpur',type:'Heritage',detail:'Royal dynasty 14th century',imgType:'heritage',imgIdx:0},{name:'Tribal Weekly Market',type:'Cultural',detail:'Gondi tribal bazaar',imgType:'market',imgIdx:0}]
+  },
+  // 11 ── HIMACHAL PRADESH
+  { id:'chitkul', name:'Chitkul', state:'Himachal Pradesh', title:'Last Village of India',
+    category:['Hill station','Nature'], position:{lat:31.3497,lng:78.4379},
+    distance:'580 km', time:'14h', heroImage: IMG.hima_high,
+    description:"At 3,450m above sea level on the banks of the Baspa river, Chitkul is the last inhabited village before the Indo-Tibetan border. Its wooden temples, apple orchards, and snow-capped Kinnaur Kailash peaks behind create an image of impossible beauty.",
+    food:[{name:'Chha Gosht',desc:'Slow-braised mutton in a mountain spice paste of ginger, garlic, and Kinnauri herbs.'},{name:'Sidu',desc:'Steamed wheat dumplings filled with poppy seed and walnut paste — Himachali winter staple.'}],
+    hotels:[{name:'Banjara Retreat Chitkul',price:'₹5,800/night',rating:4.7},{name:'Apple House Homestay',price:'₹2,000/night',rating:4.5}],
+    calendar:[{month:'July',event:'Ukyang Festival',icon:'🏔️'},{month:'September',event:'Apple Harvest Season',icon:'🍎'}],
+    spots:[{name:'Baspa River Bank',type:'Scenic',detail:'Crystal clear glacial river',imgType:'mountain',imgIdx:0},{name:'Kinnauri Temple',type:'Temple',detail:'Ancient wood-carved shrine',imgType:'temple',imgIdx:0},{name:'Rangrik Meadow',type:'Alpine',detail:'Wildflower carpet in July',imgType:'valley',imgIdx:0},{name:'Kinnaur Kailash View',type:'Mountain',detail:'Sacred 6,050m peak',imgType:'mountain',imgIdx:1},{name:'Border View Point',type:'Landmark',detail:'Last point before Tibet',imgType:'mountain',imgIdx:0},{name:'Apple Orchard Walk',type:'Experience',detail:'Self-pick apple orchards',imgType:'forest',imgIdx:1}]
+  },
+  // 12 ── HIMACHAL PRADESH (Spiti)
+  { id:'spiti', name:'Kibber Village', state:'Himachal Pradesh (Spiti)',  title:'Village in the Sky',
+    category:['Hill station','Nature','Culture'], position:{lat:32.1986,lng:78.0058},
+    distance:'660 km', time:'18h', heroImage: IMG.hima_valley,
+    description:"Perched at 4,270m above sea level, Kibber was once the world's highest motorable village. In this high-altitude cold desert of Spiti, whitewashed mud-brick homes cluster beneath an ancient monastery, surrounded by snow leopard territory and barren mountain grandeur.",
+    food:[{name:'Thukpa',desc:'Rich Tibetan noodle broth with yak meat and root vegetables — the warming lifeline of Spiti winters.'},{name:'Tsampa',desc:'Roasted barley flour mixed with butter tea — the ancient high-altitude staple of Tibetan communities.'}],
+    hotels:[{name:'Spiti Holiday',price:'₹3,500/night',rating:4.6},{name:'Kibber Village Homestay',price:'₹1,500/night',rating:4.8}],
+    calendar:[{month:'June',event:'Spiti Losar (New Year)',icon:'🎆'},{month:'July–August',event:'Snow Leopard Tracking Season',icon:'🐆'}],
+    spots:[{name:'Key Monastery',type:'Monastery',detail:'1,000-year-old gompa',imgType:'temple',imgIdx:0},{name:'Chandratal Lake',type:'Lake',detail:'Crescent moon glacial lake',imgType:'lake',imgIdx:0},{name:'Dhankar Monastery',type:'Heritage',detail:'Clifftop fort-monastery',imgType:'heritage',imgIdx:0},{name:'Snow Leopard Trek',type:'Wildlife',detail:'Top habitat for snow leopards',imgType:'mountain',imgIdx:1},{name:'Langza Fossil Village',type:'Geology',detail:'Marine fossils at 4,400m',imgType:'valley',imgIdx:1},{name:'Pin Valley National Park',type:'Wildlife',detail:'Ibex and red fox sightings',imgType:'wildlife',imgIdx:1}]
+  },
+  // 13 ── UTTARAKHAND
+  { id:'munsiyari', name:'Munsiyari', state:'Uttarakhand', title:'Little Kashmir of Kumaon',
+    category:['Hill station','Nature'], position:{lat:30.0649,lng:80.2416},
+    distance:'580 km', time:'13h', heroImage: IMG.hima_meadow,
+    description:"A remote hill station in Pithoragarh district overlooking the Panchachuli group of peaks, Munsiyari is a base camp for Himalayan treks into Milam, Namik, and Ralam glaciers. Its famous 80-species lichen garden is India's first dedicated lichenarium.",
+    food:[{name:'Bhatt ki Dal',desc:'Black horsegram lentil soup — slow-cooked with local herbs, the definitive Kumaoni comfort food.'},{name:'Bal Mithai',desc:'Dark chocolate-brown fudge coated in white sugar balls — Kumaon\'s most beloved sweet.'}],
+    hotels:[{name:'Mahindra Homestays Munsiyari',price:'₹3,200/night',rating:4.5},{name:'Hotel Panchwali',price:'₹1,800/night',rating:4.2}],
+    calendar:[{month:'May–June',event:'Glacier Trek Season Opens',icon:'🧊'},{month:'October',event:'Harvest & Fair Season',icon:'🌾'}],
+    spots:[{name:'Panchachuli Base View',type:'Mountain',detail:'Five legendary peaks at once',imgType:'mountain',imgIdx:0},{name:'Lichen Garden',type:'Unique',detail:"India's first lichenarium",imgType:'forest',imgIdx:0},{name:'Birthi Waterfalls',type:'Waterfall',detail:'40m cascade in deodar forest',imgType:'waterfall',imgIdx:0},{name:'Tribal Heritage Museum',type:'Museum',detail:'Johar tribal artefacts',imgType:'heritage',imgIdx:0},{name:'Milam Glacier Trek',type:'Trekking',detail:'4 days, 50 km route',imgType:'mountain',imgIdx:1},{name:'Maheshwari Kund',type:'Lake',detail:'Glacial lake at 2,800m',imgType:'lake',imgIdx:1}]
+  },
+  // 14 ── JAMMU & KASHMIR
+  { id:'gurez', name:'Gurez Valley', state:'Jammu & Kashmir', title:'The Untouched Kashmir',
+    category:['Hill station','Nature','History'], position:{lat:34.6230,lng:74.8450},
+    distance:'870 km', time:'19h', heroImage: IMG.hima_river,
+    description:"Guarded by towering snow-capped peaks and the rushing Kishanganga river, Gurez Valley remains one of Kashmir's most enchanting and least-visited regions. Dotted with wooden cabins and wildflower meadows, it's home to the ancient Dard-Shin people whose culture stretches back centuries.",
+    food:[{name:'Rogan Josh',desc:'Slow-braised lamb in aromatic Kashmiri spice paste — the crown jewel of Kashmiri cuisine.'},{name:'Harisa',desc:'Slow-cooked wheat and meat porridge eaten in winter — a centuries-old Kashmiri tradition.'}],
+    hotels:[{name:'Gurez Valley Eco Camp',price:'₹4,500/night',rating:4.6},{name:'Dawar Homestay',price:'₹2,000/night',rating:4.7}],
+    calendar:[{month:'May–September',event:'Valley Access Season',icon:'🌸'},{month:'June',event:'Tulip Meadow Bloom',icon:'🌷'}],
+    spots:[{name:'Habba Khatoon Peak',type:'Trekking',detail:'Named for a Kashmiri poetess',imgType:'mountain',imgIdx:0},{name:'Kishanganga River',type:'Scenic',detail:'Crystal glacial river',imgType:'mountain',imgIdx:1},{name:'Dawar Village',type:'Cultural',detail:'Dard-Shin tribal community',imgType:'valley',imgIdx:0},{name:'Tragbal Wildlife Sanctuary',type:'Wildlife',detail:'Hangul deer habitat',imgType:'wildlife',imgIdx:0},{name:'Razdan Pass (3,300m)',type:'Mountain Pass',detail:'Gateway to the valley',imgType:'mountain',imgIdx:1},{name:'Tulail Valley Meadows',type:'Alpine',detail:'Wildflower carpet in June',imgType:'valley',imgIdx:1}]
+  },
+  // 15 ── RAJASTHAN
+  { id:'khuri', name:'Khuri', state:'Rajasthan', title:'Thar Desert Dunes',
+    category:['Nature','Culture'], position:{lat:26.5874,lng:70.4795},
+    distance:'780 km', time:'16h', heroImage: IMG.raj_dunes,
+    description:"An unspoilt sand dune village 48km from Jaisalmer, Khuri offers the most authentic Thar Desert experience without tourist crowds. Its honey-coloured dunes change mood by the hour — blazing gold at noon, deep amber at dusk, and silver under a full moon.",
+    food:[{name:'Dal Baati Churma',desc:'Baked wheat balls with five-lentil dal and crushed sweetened baati — the desert feast of Rajasthan.'},{name:'Ker Sangri',desc:'Desert berry and dried bean curry cooked in mustard oil — a uniquely Rajasthani dry pickle dish.'}],
+    hotels:[{name:'Mama Ki Dhani Khuri',price:'₹2,500/night',rating:4.7},{name:'Khuri Dune Camp',price:'₹3,200/night',rating:4.5}],
+    calendar:[{month:'December',event:'Desert Festival Eve Dunes',icon:'🌙'},{month:'November',event:'Camel Fair Preparation',icon:'🐪'}],
+    spots:[{name:'Khuri Dunes Sunrise',type:'Natural Wonder',detail:'Pristine dunes, no crowds',imgType:'desert',imgIdx:0},{name:'Camel Safari at Sunset',type:'Experience',detail:'2–3 hour dune rides',imgType:'desert',imgIdx:1},{name:'Panchala Black Buck Reserve',type:'Wildlife',detail:'Rare black buck colony',imgType:'wildlife',imgIdx:0},{name:'Folk Music Around Fire',type:'Cultural',detail:'Manganiyar musicians nightly',imgType:'market',imgIdx:1},{name:'Jaisalmer Fort (48km)',type:'Heritage',detail:'UNESCO living fort city',imgType:'heritage',imgIdx:0},{name:'Khuri Village Crafts',type:'Craft',detail:'Local weavers & potters',imgType:'craft',imgIdx:0}]
+  },
+  // 16 ── RAJASTHAN
+  { id:'bishnoi', name:'Bishnoi Villages', state:'Rajasthan', title:'Original Eco-Warriors',
+    category:['Nature','Culture'], position:{lat:26.2784,lng:72.9395},
+    distance:'620 km', time:'13h', heroImage: IMG.raj_village,
+    description:"The Bishnoi community near Jodhpur follow 29 principles laid down by Guru Jambheshwar in 1485 — among them an absolute prohibition on harming any living creature or felling green trees. In 1730, 363 Bishnois gave their lives clinging to Khejri trees to stop the Maharaja's men from cutting them.",
+    food:[{name:'Gatte ki Sabzi',desc:'Spiced chickpea flour dumplings in tangy yogurt curry — a Bishnoi kitchen staple.'},{name:'Churma Ladoo',desc:'Crushed wheat ball sweets with ghee and jaggery — offered as prasad at community events.'}],
+    hotels:[{name:'Bishnoi Village Camp',price:'₹4,500/night',rating:4.6},{name:'Chandelao Garh Heritage',price:'₹6,500/night',rating:4.9}],
+    calendar:[{month:'March',event:'Holi Conservation Festival',icon:'🌳'},{month:'October',event:'Marwar Festival',icon:'🎭'}],
+    spots:[{name:'Khejri Sacred Grove',type:'Sacred Nature',detail:'Trees protected for 500 years',imgType:'forest',imgIdx:0},{name:'Black Buck Viewing',type:'Wildlife',detail:'Protected herd roams freely',imgType:'wildlife',imgIdx:0},{name:'Block Printing Workshop',type:'Craft',detail:'Learn traditional Sanganeri print',imgType:'craft',imgIdx:1},{name:'Village Potter Demonstration',type:'Experience',detail:'Traditional wheel pottery',imgType:'market',imgIdx:0},{name:'Jodhpur Umaid Bhawan',type:'Heritage',detail:'World\'s largest private home',imgType:'heritage',imgIdx:0},{name:'Thar Heritage Museum',type:'Museum',detail:'Rural Rajasthani life display',imgType:'heritage',imgIdx:1}]
+  },
+  // 17 ── KERALA
+  { id:'kumarakom', name:'Kumarakom', state:'Kerala', title:'Backwater Village Sanctuary',
+    category:['Nature','Culture'], position:{lat:9.6170,lng:76.4340},
+    distance:'1,460 km', time:'26h', heroImage: IMG.south_backw,
+    description:"A cluster of tiny islands on Vembanad Lake, Kumarakom is the quintessential Kerala backwater experience — a labyrinth of canals, paddy fields, coconut lagoons, and traditional kettu vellam houseboats. The bird sanctuary here is home to migratory Siberian storks.",
+    food:[{name:'Karimeen Pollichathu',desc:'Pearl spot fish marinated in coconut and spice, wrapped in banana leaf and grilled — Kerala\'s signature dish.'},{name:'Appam with Stew',desc:'Lacy rice hoppers served with coconut milk vegetable stew — the perfect Kerala breakfast.'}],
+    hotels:[{name:'Taj Kumarakom Resort',price:'₹12,000/night',rating:4.8},{name:'Coconut Lagoon',price:'₹8,500/night',rating:4.7}],
+    calendar:[{month:'August',event:'Onam Harvest Festival',icon:'🌸'},{month:'January',event:'Nehru Trophy Boat Race',icon:'🚣'}],
+    spots:[{name:'Houseboat Canal Cruise',type:'Experience',detail:'Overnight kettu vellam stay',imgType:'lake',imgIdx:0},{name:'Kumarakom Bird Sanctuary',type:'Wildlife',detail:'Siberian storks & egrets',imgType:'wildlife',imgIdx:1},{name:'Vembanad Lake Sunset',type:'Scenic',detail:"Kerala's largest lake",imgType:'lake',imgIdx:1},{name:'Ayurvedic Rejuvenation',type:'Wellness',detail:'Traditional Panchakarma',imgType:'forest',imgIdx:0},{name:'Kottayam Rubber Estates',type:'Experience',detail:'Rubber tapping at dawn',imgType:'forest',imgIdx:1},{name:'Pathiramanal Island',type:'Nature',detail:'Migratory bird island',imgType:'wildlife',imgIdx:0}]
+  },
+  // 18 ── GOA
+  { id:'divar', name:'Divar Island', state:'Goa', title:"Goa's Forgotten River Island",
+    category:['History','Culture','Nature'], position:{lat:15.5094,lng:73.9240},
+    distance:'990 km', time:'18h', heroImage: IMG.south_rain,
+    description:"Accessible only by ferry, Divar is a sleepy river island in the Mandovi that time forgot. Portuguese mansions draped in bougainvillea, ancient Hindu temples, and paddy fields where kingfishers dart make it an extraordinary contrast to the Goa most visitors know.",
+    food:[{name:'Ros Omelette',desc:'Goan omelette soaked in fiery chorizo gravy — a roadside staple found only in inland Goa.'},{name:'Bebinca',desc:'Goan 16-layer coconut custard pudding baked in a wood fire oven — a colony-era Portuguese sweet.'}],
+    hotels:[{name:'Riverview Divar Homestay',price:'₹3,200/night',rating:4.6},{name:'Casa Dona Maria',price:'₹5,500/night',rating:4.8}],
+    calendar:[{month:'June',event:'Bonderam Island Festival',icon:'🏳️'},{month:'December',event:'Christmas Midnight Mass',icon:'⛪'}],
+    spots:[{name:'Piedade Church',type:'Heritage',detail:'1700s Portuguese chapel',imgType:'ruins',imgIdx:0},{name:'Saptakoteshwar Temple',type:'Temple',detail:'Ancient Shiva site',imgType:'temple',imgIdx:0},{name:'Rice Paddy Walks',type:'Nature',detail:'Kingfisher & egret sightings',imgType:'paddy',imgIdx:0},{name:'Mandovi River Ferry',type:'Experience',detail:'Free government ferries',imgType:'lake',imgIdx:0},{name:'Old Goa Basilica (3km)',type:'UNESCO Site',detail:'St. Francis Xavier relics',imgType:'heritage',imgIdx:1},{name:'Portuguese Mansions Trail',type:'Heritage',detail:'Self-guided architecture walk',imgType:'heritage',imgIdx:0}]
+  },
+  // 19 ── ODISHA
+  { id:'raghurajpur', name:'Raghurajpur', state:'Odisha', title:'Heritage Crafts Village',
+    category:['Culture','History','Archeology'], position:{lat:19.8814,lng:85.8918},
+    distance:'1,470 km', time:'26h', heroImage: IMG.textile,
+    description:"Every family in Raghurajpur is an artist. This UNESCO-recognised crafts village near Puri produces the finest Pattachitra cloth paintings in the world — intricate mythological narratives on cloth or palm leaf painted with natural colours derived from stones, flowers, and shells.",
+    food:[{name:'Dalma',desc:'Odisha\'s signature dish of mixed vegetables and lentils cooked with raw turmeric and dried mango — deeply homely.'},{name:'Chhena Poda',desc:'Burnt-crust cottage cheese cake caramelised in a clay oven — Odisha\'s great contribution to Indian sweets.'}],
+    hotels:[{name:'Craftsman Homestay Raghurajpur',price:'₹1,800/night',rating:4.8},{name:'Puri Beach Resort',price:'₹4,500/night',rating:4.3}],
+    calendar:[{month:'February',event:'Pattachitra Art Fair',icon:'🖼️'},{month:'June–July',event:'Rath Yatra (Jagannath Chariot)',icon:'🏛️'}],
+    spots:[{name:'Pattachitra Live Painting',type:'Artisan',detail:'Watch artists at work',imgType:'craft',imgIdx:0},{name:'Palm Leaf Manuscript House',type:'Museum',detail:'Ancient illustrated texts',imgType:'craft',imgIdx:1},{name:'Raghurajpur Gotipua Dance',type:'Cultural',detail:'Pre-Odissi acrobatic dance form',imgType:'market',imgIdx:0},{name:'Puri Jagannath Temple',type:'Temple',detail:'One of 4 Char Dhams of India',imgType:'temple',imgIdx:0},{name:'Chilika Lake (35km)',type:'Wildlife',detail:'Asia\'s largest brackish lake',imgType:'lake',imgIdx:0},{name:'Puri Beach Sunrise',type:'Scenic',detail:'Famous sunrise from the sands',imgType:'beach',imgIdx:0}]
+  },
+  // 20 ── MAHARASHTRA
+  { id:'malvan', name:'Malvan', state:'Maharashtra', title:'Sindhudurg Coastal Village',
+    category:['Beach','History'], position:{lat:16.0609,lng:73.4658},
+    distance:'620 km', time:'13h', heroImage: IMG.south_cliff,
+    description:"A quiet fishing town on Maharashtra's Konkan coast, Malvan is home to the stunning sea fort of Sindhudurg built by Shivaji Maharaj on an island in 1664. Its turquoise water, vibrant coral reefs, and fiery Malvani cuisine make it one of the Konkan coast's finest secrets.",
+    food:[{name:'Malvani Fish Curry',desc:'Dried coconut and red chilli based coastal curry with kingfish — the pride of Konkan cuisine.'},{name:'Sol Kadhi',desc:'Pink kokum and coconut milk digestive drink — the Konkan coast\'s answer to a post-meal coolant.'}],
+    hotels:[{name:'MTDC Resort Malvan',price:'₹3,200/night',rating:4.2},{name:'Chivla Beach Resort',price:'₹4,800/night',rating:4.5}],
+    calendar:[{month:'February',event:'Shimgya (Holi) Celebrations',icon:'🎨'},{month:'November',event:'Malvan Kite Festival',icon:'🪁'}],
+    spots:[{name:'Sindhudurg Fort',type:'Heritage',detail:'Shivaji\'s island sea fort (1664)',imgType:'heritage',imgIdx:0},{name:'Chivla Beach',type:'Beach',detail:'Pristine, low-footfall sands',imgType:'beach',imgIdx:0},{name:'Rock Garden Coral Reef',type:'Snorkeling',detail:'40+ coral species underwater',imgType:'beach',imgIdx:1},{name:'Tarkarli Beach',type:'Beach',detail:'Clearest water on Konkan coast',imgType:'beach',imgIdx:0},{name:'Dhaba Fish Market',type:'Market',detail:'Daily 7am fish auction',imgType:'market',imgIdx:0},{name:'Vengurla Wildlife Sanctuary',type:'Wildlife',detail:'Nesting sea turtles',imgType:'wildlife',imgIdx:1}]
+  },
+  // 21 ── MADHYA PRADESH
+  { id:'orchha', name:'Orchha', state:'Madhya Pradesh', title:'Forgotten Bundela Capital',
+    category:['History','Temples','Archeology'], position:{lat:25.3519,lng:78.6417},
+    distance:'520 km', time:'10h', heroImage: IMG.heritage,
+    description:"On a bend of the Betwa river, Orchha is a remarkably intact 16th-century Bundela kingdom — cenotaphs, chatris, palaces, and temples rising in reddish sandstone from the riverbank. Its Ram Raja Temple is the only temple in India where Lord Ram is worshipped as a king and given a daily gun salute by the police.",
+    food:[{name:'Poha Jalebi',desc:'Flattened rice with turmeric and peanuts paired with hot sugar-soaked jalebis — the MP morning ritual.'},{name:'Bhutte ka Kees',desc:'Grated corn cooked with spices and coconut milk — a beloved street snack unique to MP.'}],
+    hotels:[{name:'Amar Mahal Heritage Hotel',price:'₹5,500/night',rating:4.7},{name:'Betwa Retreat',price:'₹3,200/night',rating:4.5}],
+    calendar:[{month:'February',event:'Orchha Festival of Dances',icon:'💃'},{month:'November',event:'Kartik Puja River Aarti',icon:'🪔'}],
+    spots:[{name:'Raj Mahal Palace',type:'Heritage',detail:'16th-century painted chambers',imgType:'heritage',imgIdx:0},{name:'Ram Raja Temple',type:'Temple',detail:'God worshipped as a king',imgType:'temple',imgIdx:0},{name:'Jahangir Mahal',type:'Heritage',detail:'Built for Mughal Emperor',imgType:'heritage',imgIdx:1},{name:'Betwa River Sunrise',type:'Scenic',detail:'Cenotaphs reflected in water',imgType:'lake',imgIdx:1},{name:'Orchha Wildlife Sanctuary',type:'Wildlife',detail:'Gharial crocodile sightings',imgType:'wildlife',imgIdx:0},{name:'Chaturbhuj Temple',type:'Temple',detail:'Unique star-shaped architecture',imgType:'temple',imgIdx:1}]
+  },
+  // 22 ── PUNJAB
+  { id:'anandpur', name:'Anandpur Sahib', state:'Punjab', title:'City of Divine Bliss',
+    category:['History','Culture','Temples'], position:{lat:31.2390,lng:76.4986},
+    distance:'310 km', time:'7h', heroImage: IMG.hima_meadow,
+    description:"Nestled at the foot of the Shivalik hills, Anandpur Sahib is one of Sikhism's holiest cities — founded by Guru Tegh Bahadur in 1665 and the birthplace of the Khalsa in 1699. The Virasat-e-Khalsa museum is one of the world's finest heritage museums.",
+    food:[{name:'Langar Prasad',desc:'Free community kitchen dal, roti, and kheer served to all visitors at the Gurdwara 24 hours a day.'},{name:'Makki di Roti & Sarson da Saag',desc:'Cornmeal flatbread with mustard greens — Punjab\'s definitive winter meal.'}],
+    hotels:[{name:'HPTDC Hotel Anandpur',price:'₹2,800/night',rating:4.3},{name:'Sanctuary Homestay',price:'₹1,800/night',rating:4.5}],
+    calendar:[{month:'March',event:'Hola Mohalla (Sikh Olympics)',icon:'⚔️'},{month:'November',event:'Guru Nanak Jayanti',icon:'🪔'}],
+    spots:[{name:'Virasat-e-Khalsa Museum',type:'Museum',detail:'Award-winning heritage museum',imgType:'heritage',imgIdx:0},{name:'Takht Sri Keshgarh Sahib',type:'Temple',detail:'One of 5 Sikh Takhts',imgType:'temple',imgIdx:0},{name:'Shivalik Hills Trek',type:'Trekking',detail:'Short forest trails from town',imgType:'forest',imgIdx:0},{name:'Bhakra Dam (40km)',type:'Engineering',detail:'Second largest gravity dam in Asia',imgType:'lake',imgIdx:0},{name:'Naina Devi Temple',type:'Temple',detail:'Hilltop Shakti Peeth',imgType:'temple',imgIdx:1},{name:'Sutlej River Rafting',type:'Adventure',detail:'Grade II–III rafting',imgType:'mountain',imgIdx:0}]
+  },
+  // 23 ── WEST BENGAL
+  { id:'bishnupur', name:'Bishnupur', state:'West Bengal', title:'Temple Town of Terracotta',
+    category:['History','Temples','Archeology'], position:{lat:23.0755,lng:87.3196},
+    distance:'1,580 km', time:'27h', heroImage: IMG.rural1,
+    description:"Bishnupur is a medieval Malla kingdom town filled with extraordinary terracotta temples built between the 17th and 19th centuries. Its distinct architectural style uses interlocking bricks without mortar, decorated with scenes from the Ramayana and Mahabharata in bas-relief clay panels.",
+    food:[{name:'Bishnupur Mishti Doi',desc:'Slow-set sweetened yogurt in earthen pots — the Bengali cult dessert that makes a pilgrimage worthwhile.'},{name:'Luchi Alur Tarkari',desc:'Deep-fried puffed wheat bread with spiced potato — the canonical Bengali weekend morning meal.'}],
+    hotels:[{name:'Hotel Mayapur',price:'₹1,800/night',rating:4.2},{name:'Bishnupur Tourist Lodge',price:'₹1,200/night',rating:4.0}],
+    calendar:[{month:'December',event:'Bishnupur Classical Music Festival',icon:'🎶'},{month:'March',event:'Dol Yatra (Holi celebration)',icon:'🎨'}],
+    spots:[{name:'Rasmancha Temple',type:'Temple',detail:'1600 AD terracotta brick pyramid',imgType:'temple',imgIdx:0},{name:'Jorbangla Temple',type:'Temple',detail:'Distinctive twin-hut terracotta roof',imgType:'temple',imgIdx:1},{name:'Pancha Ratna Temple',type:'Heritage',detail:'Five-towered 17th-century shrine',imgType:'heritage',imgIdx:0},{name:'Bishnupur Museum',type:'Museum',detail:'Malla kingdom artefacts',imgType:'heritage',imgIdx:1},{name:'Baluchari Saree Weaving',type:'Craft',detail:'Silk sarees with epic narratives',imgType:'craft',imgIdx:0},{name:'Patamda Lake',type:'Scenic',detail:'Forest-ringed reservoir',imgType:'lake',imgIdx:1}]
+  },
+  // 24 ── SIKKIM
+  { id:'yuksom', name:'Yuksom', state:'Sikkim', title:"Sikkim's First Capital",
+    category:['History','Nature','Temples'], position:{lat:27.4036,lng:88.2339},
+    distance:'1,740 km', time:'32h', heroImage: IMG.ne_forest,
+    description:"The first capital of Sikkim, founded in 1642, Yuksom sits surrounded by Himalayan forests at the foot of Kangchenjunga. It is the starting point of the famous Goecha La trek and contains Norbugang Coronation Throne, the only intact coronation site of the Sikkimese kingdom.",
+    food:[{name:'Gundruk Soup',desc:'Fermented leafy greens in a thin broth — the Nepali-Sikkimese source of probiotics for mountain winters.'},{name:'Sel Roti',desc:'Crispy rice flour ring-donuts fried in ghee — served at every celebration in Sikkim.'}],
+    hotels:[{name:'Tashi Gang Heritage',price:'₹3,500/night',rating:4.7},{name:'Wild Orchid Yuksom',price:'₹2,500/night',rating:4.6}],
+    calendar:[{month:'December',event:'Losar Tibetan New Year',icon:'🎐'},{month:'May',event:'Kangchenjunga Puja',icon:'🏔️'}],
+    spots:[{name:'Kangchenjunga North Face View',type:'Mountain',detail:'3rd highest peak on Earth',imgType:'mountain',imgIdx:0},{name:'Norbugang Coronation Throne',type:'Heritage',detail:"Sikkim's 1642 coronation site",imgType:'heritage',imgIdx:0},{name:'Dubdi Monastery',type:'Monastery',detail:'Oldest monastery in Sikkim',imgType:'temple',imgIdx:0},{name:'Goecha La Base Trek',type:'Trekking',detail:'9-day high-altitude route',imgType:'mountain',imgIdx:1},{name:'Khecheopalri Lake',type:'Sacred Lake',detail:'Wish-fulfilling Sikkimese lake',imgType:'lake',imgIdx:0},{name:'Kanchendzonga National Park',type:'Wildlife',detail:'Red panda & snow leopard',imgType:'wildlife',imgIdx:0}]
+  },
+  // 25 ── MANIPUR
+  { id:'loktak', name:'Loktak Lake Villages', state:'Manipur', title:'Floating Island People',
+    category:['Nature','Culture'], position:{lat:24.4900,lng:93.7880},
+    distance:'2,350 km', time:'44h', heroImage: IMG.ne_hills,
+    description:"Loktak is Northeast India's largest freshwater lake, famous for its phumdis — floating islands of biomass, soil, and vegetation. The Meitei fishermen of Sendra island live in thatched huts directly on the lake, casting nets from canoes between islands of floating meadow.",
+    food:[{name:'Eromba',desc:'Fermented fish and vegetables mashed with chilli — Manipur\'s most essential side dish.'},{name:'Chamthong (Kangshoi)',desc:'Mixed vegetable stew cooked with local herbs — the everyday meal of Manipuri households.'}],
+    hotels:[{name:'Sendra Island Tourist Home',price:'₹1,800/night',rating:4.3},{name:'Imphal Hotel Imphal',price:'₹3,200/night',rating:4.2}],
+    calendar:[{month:'November',event:'Ningol Chakouba (Women\'s Day)',icon:'🌸'},{month:'April',event:'Yaoshang (Manipuri Holi)',icon:'🎭'}],
+    spots:[{name:'Keibul Lamjao National Park',type:'Wildlife',detail:'Last home of brow-antlered deer',imgType:'wildlife',imgIdx:0},{name:'Sendra Island Stay',type:'Experience',detail:'Stay on floating island',imgType:'lake',imgIdx:0},{name:'INA War Cemetery Moirang',type:'History',detail:'WWII Indian National Army site',imgType:'heritage',imgIdx:0},{name:'Loktak Floating Villages',type:'Cultural',detail:'Ancient phumdi fishermen',imgType:'paddy',imgIdx:1},{name:'Shree Govindajee Temple',type:'Temple',detail:'Manipuri Vaishnavite shrine',imgType:'temple',imgIdx:1},{name:'Ima Keithel Women\'s Market',type:'Market',detail:'World\'s only all-women market',imgType:'market',imgIdx:0}]
+  },
+  // 26 ── HIMACHAL PRADESH
+  { id:'tirthan', name:'Tirthan Valley', state:'Himachal Pradesh', title:'Great Himalayan Trout Paradise',
+    category:['Nature','Hill station'], position:{lat:31.6284,lng:77.3555},
+    distance:'490 km', time:'11h', heroImage: IMG.hima_lake,
+    description:"The Tirthan river carves through one of the most pristine valleys in Himachal, with Great Himalayan National Park (UNESCO) cloaking its slopes in deodar, oak, and rhododendron. The river holds thriving populations of wild brown trout, making this the fly-fishing capital of India.",
+    food:[{name:'Trout on a Stone',desc:'Fresh river trout grilled on a hot flat stone with only salt and lemon — valley speciality.'},{name:'Siddu with Ghee',desc:'Steamed wheat pockets filled with walnut and poppy seed, drenched in mountain ghee.'}],
+    hotels:[{name:'Raju Bharti Guesthouse',price:'₹2,800/night',rating:4.9},{name:'Riverine Camp Tirthan',price:'₹3,500/night',rating:4.7}],
+    calendar:[{month:'April–June',event:'Trout Fishing Season',icon:'🎣'},{month:'September',event:'Apple Harvest',icon:'🍎'}],
+    spots:[{name:'GHNP UNESCO Trekking Zone',type:'Wildlife',detail:'Untouched Himalayan biodiversity',imgType:'forest',imgIdx:0},{name:'Tirthan River Fly Fishing',type:'Adventure',detail:'Wild brown trout in crystal water',imgType:'mountain',imgIdx:0},{name:'Jalori Pass (3,120m)',type:'Mountain Pass',detail:'Meadow views at the top',imgType:'valley',imgIdx:0},{name:'Serolsar Lake',type:'Lake',detail:'High-altitude forest lake',imgType:'lake',imgIdx:0},{name:'Shringa Rishi Temple',type:'Temple',detail:'Sacred forest shrine',imgType:'temple',imgIdx:0},{name:'Shoja Village Meadow',type:'Scenic',detail:'Traditional apple orchards',imgType:'valley',imgIdx:1}]
+  },
+  // 27 ── KERALA
+  { id:'varkala', name:'Varkala', state:'Kerala', title:'Cliff Coast Sanctuary',
+    category:['Beach','Temples'], position:{lat:8.7330,lng:76.7168},
+    distance:'1,580 km', time:'28h', heroImage: IMG.south_cliff,
+    description:"Varkala's dramatic laterite cliffs plunge 30 metres into the Arabian Sea, with Papanasam Beach at their feet said to wash away sins. The 2,000-year-old Janardana Swami Temple sits atop the cliff, and Ayurvedic clinics, yoga centres, and seafood shacks line the cliff walk.",
+    food:[{name:'Kerala Red Fish Curry',desc:'Coconut milk and raw mango base with Malabar coast spices — a perfectly balanced fish curry.'},{name:'Puttu & Kadala',desc:'Steamed rice-coconut cylinders with black chickpea curry — the defining Kerala breakfast.'}],
+    hotels:[{name:'Sea Pearl Chalets',price:'₹4,500/night',rating:4.6},{name:'Taj Green Cove',price:'₹9,500/night',rating:4.8}],
+    calendar:[{month:'December–February',event:'Peak Season & Yoga Retreats',icon:'🧘'},{month:'November',event:'Varkala Literature Festival',icon:'📚'}],
+    spots:[{name:'Papanasam Cliff Beach',type:'Beach',detail:'Black rock and red cliffs',imgType:'beach',imgIdx:0},{name:'Janardana Swami Temple',type:'Temple',detail:'2,000-year-old cliff-top shrine',imgType:'temple',imgIdx:0},{name:'Kappil Beach & Backwater',type:'Nature',detail:'Lake meets sea, no crowds',imgType:'lake',imgIdx:1},{name:'Varkala Ayurveda Clinics',type:'Wellness',detail:'Traditional Panchakarma centre',imgType:'forest',imgIdx:1},{name:'Cliff Path Sunset Walk',type:'Scenic',detail:'1.5 km above the Arabian Sea',imgType:'beach',imgIdx:1},{name:'Sivagiri Mutt',type:'Heritage',detail:'Sree Narayana Guru ashram',imgType:'heritage',imgIdx:1}]
+  },
+  // 28 ── KARNATAKA
+  { id:'agumbe', name:'Agumbe', state:'Karnataka', title:'Cherrapunjee of the South',
+    category:['Nature','Hill station'], position:{lat:13.5011,lng:75.0962},
+    distance:'440 km', time:'10h', heroImage: IMG.kar_coffee,
+    description:"Agumbe in the Malnad region receives the second highest rainfall in India and is the last stronghold of the endangered King Cobra. Its ancient rainforest is the research site for herpetologist Romulus Whitaker's famous King Cobra research station, and its sunset viewpoint is legendary.",
+    food:[{name:'Malnad Koli Saaru',desc:'Free-range country chicken curry in a red coconut and coriander gravy — comfort food of the Malnad hills.'},{name:'Shavige Payasa',desc:'Roasted vermicelli cooked in jaggery coconut milk — the Malnad temple sweet.'}],
+    hotels:[{name:'Doddamane Heritage Homestay',price:'₹4,200/night',rating:4.9},{name:'Malnad Stays',price:'₹2,800/night',rating:4.6}],
+    calendar:[{month:'June–September',event:'Monsoon Season (Best Time)',icon:'🌧️'},{month:'January',event:'Yakshagana Dance Festival',icon:'🎭'}],
+    spots:[{name:'King Cobra Research Station',type:'Wildlife',detail:'Romulus Whitaker\'s base',imgType:'wildlife',imgIdx:1},{name:'Barkana Falls (201m)',type:'Waterfall',detail:"Karnataka's highest waterfall",imgType:'waterfall',imgIdx:0},{name:'Agumbe Sunset View',type:'Scenic',detail:'Legendary Deccan view',imgType:'valley',imgIdx:1},{name:'Onake Abbi Falls',type:'Waterfall',detail:'Forest waterfall with pool',imgType:'waterfall',imgIdx:1},{name:'Rainforest Research Station',type:'Nature',detail:'Biodiversity monitoring site',imgType:'forest',imgIdx:0},{name:'Narasimha Parvatha Trek',type:'Trekking',detail:'5-hour forest summit trek',imgType:'mountain',imgIdx:1}]
+  },
+  // 29 ── ANDHRA PRADESH
+  { id:'gandikota', name:'Gandikota', state:'Andhra Pradesh', title:'Grand Canyon of India',
+    category:['History','Nature','Archeology'], position:{lat:14.8064,lng:78.2722},
+    distance:'400 km', time:'8h', heroImage: IMG.raj_desert,
+    description:"Carved by the Pennar river through a 300-metre-deep Erramala gorge, Gandikota has been called India's Grand Canyon — though almost no one knows it exists. The ruined 13th-century Konda Reddy fort sits on the canyon lip, its walls literally at the edge of the precipice.",
+    food:[{name:'Gongura Mutton',desc:'Sorrel-leaf marinated mutton curry — tart, fiery, and uniquely Andhra in character.'},{name:'Pesarattu',desc:'Whole green moong crepe with ginger chutney — Andhra\'s protein-rich breakfast crepe.'}],
+    hotels:[{name:'Haritha Hotel Gandikota',price:'₹2,500/night',rating:4.3},{name:'Canyon Camp Gandikota',price:'₹3,200/night',rating:4.6}],
+    calendar:[{month:'February',event:'Camping Season at Canyon',icon:'⛺'},{month:'October',event:'Kite Festival at Fort',icon:'🪁'}],
+    spots:[{name:'Gandikota Canyon Sunrise',type:'Natural Wonder',detail:'India\'s Grand Canyon view',imgType:'desert',imgIdx:0},{name:'Konda Reddy Fort',type:'Heritage',detail:'13th-century cliff-edge fort',imgType:'heritage',imgIdx:0},{name:'Pennar River Gorge',type:'Scenic',detail:'Canyon carved by river',imgType:'valley',imgIdx:0},{name:'Mylavaram Dam Backwaters',type:'Lake',detail:'Serene reservoir next door',imgType:'lake',imgIdx:0},{name:'Belum Caves (90km)',type:'Cave',detail:'India\'s largest cave system',imgType:'cave',imgIdx:0},{name:'Mahanandi Temple (70km)',type:'Temple',detail:'Sacred spring-fed pools',imgType:'temple',imgIdx:0}]
+  },
+  // 30 ── MADHYA PRADESH
+  { id:'orchha_panna', name:'Panna', state:'Madhya Pradesh', title:'Diamonds & Tigers',
+    category:['Nature','History'], position:{lat:24.7170,lng:80.1870},
+    distance:'640 km', time:'12h', heroImage: IMG.mp_jungle,
+    description:"Panna Tiger Reserve is where Project Tiger's most dramatic comeback story unfolded — the entire tiger population was poached out by 2009, then painstakingly rebuilt through a relocation programme. Today 60+ tigers roam its dry deciduous forests, and it also sits above India's only diamond-producing region.",
+    food:[{name:'Poha Namkeen',desc:'Puffed flattened rice with sev and peanuts — Bundelkhand\'s crispy snack served at every chai stall.'},{name:'Arhar Dal Baati',desc:'Baked wheat balls dipped in lentil soup — the Madhya Pradesh farmer\'s hearty midday meal.'}],
+    hotels:[{name:'Ken River Lodge',price:'₹7,500/night',rating:4.7},{name:'Panna National Park Eco-camp',price:'₹3,500/night',rating:4.4}],
+    calendar:[{month:'October–June',event:'Panna Tiger Reserve Open Season',icon:'🐯'},{month:'November',event:'Ken River Crocodile Census',icon:'🐊'}],
+    spots:[{name:'Panna Tiger Reserve Safari',type:'Wildlife',detail:'60+ tigers, elephants & leopards',imgType:'wildlife',imgIdx:0},{name:'Pandav Falls & Caves',type:'Waterfall',detail:'30m waterfall + Buddha sculptures',imgType:'waterfall',imgIdx:0},{name:'Raneh Falls',type:'Geology',detail:'Crystalline basalt & granite gorge',imgType:'waterfall',imgIdx:1},{name:'Diamond Mining Village',type:'Unique',detail:'Traditional alluvial diamond digging',imgType:'desert',imgIdx:1},{name:'Ajaigarh Fort',type:'Heritage',detail:'Chandela dynasty cliff fort',imgType:'heritage',imgIdx:1},{name:'Ken Gharial Sanctuary',type:'Wildlife',detail:'Gharial & freshwater turtles',imgType:'wildlife',imgIdx:1}]
+  },
+  // 31 ── TRIPURA
+  { id:'neermahal', name:'Neermahal', state:'Tripura', title:'Water Palace of the East',
+    category:['History','Culture'], position:{lat:23.5022,lng:91.2716},
+    distance:'1,950 km', time:'36h', heroImage: IMG.ne_hills,
+    description:"Rising from the middle of Rudrasagar Lake, Neermahal is a fairy-tale palace built by Maharaja Bir Bikram Kishore Manikya in 1930 — one of only two water palaces in India. The drive to Tripura through Bangladeshi cultural influence and bamboo forests makes it an extraordinary journey.",
+    food:[{name:'Mui Borok Wahan Mosdeng',desc:'Steamed pork with fermented bamboo shoot sauce — the cornerstone of Tripuri tribal cuisine.'},{name:'Gudok',desc:'Dried fish and bamboo shoot curry cooked in earthenware — deep and smoky Tripuri flavour.'}],
+    hotels:[{name:'TTAADC Hotel Neermahal',price:'₹2,200/night',rating:4.0},{name:'Agartala Gateway Hotel',price:'₹3,800/night',rating:4.3}],
+    calendar:[{month:'August',event:'Neermahal Boat Festival',icon:'🚣'},{month:'November',event:'Kharchi Puja Festival',icon:'🌺'}],
+    spots:[{name:'Neermahal Water Palace',type:'Heritage',detail:'1930 lake palace by boat',imgType:'lake',imgIdx:0},{name:'Rudrasagar Lake',type:'Lake',detail:'Scenic reservoir surrounding',imgType:'lake',imgIdx:1},{name:'Tripura Sundari Temple',type:'Temple',detail:'One of 51 Shakti Peethas',imgType:'temple',imgIdx:0},{name:'Ujjayanta Palace Museum',type:'Museum',detail:'Former royal palace collection',imgType:'heritage',imgIdx:0},{name:'Jampui Hills',type:'Scenic',detail:'Orange orchards cloud forest',imgType:'valley',imgIdx:0},{name:'Unakoti Rock Sculptures',type:'Archeology',detail:'8th century cliff carvings',imgType:'heritage',imgIdx:1}]
+  },
+  // 32 ── HIMACHAL PRADESH
+  { id:'tirthan2_kalpa', name:'Kalpa', state:'Himachal Pradesh (Kinnaur)', title:'Apple Capital of Kinnaur',
+    category:['Hill station','Nature','Culture'], position:{lat:31.5399,lng:78.2586},
+    distance:'610 km', time:'15h', heroImage: IMG.hima_high,
+    description:"Kalpa is a quaint village perched above the Sutlej river in Kinnaur, directly facing the sacred Kinnaur Kailash (6,050m). Its ancient Hu-Bu-Lan-Kar Temple complex, apple orchards, and unforgettable Himalayan panoramas draw those who make the long drive on mountain roads.",
+    food:[{name:'Chhaang',desc:'Fermented millet beer served warm in a wooden vessel — the traditional Kinnauri hospitality drink.'},{name:'Kannaura (Wild Fruit Jam)',desc:'Kinnauri apricot and sea buckthorn preserves made by every household in the village.'}],
+    hotels:[{name:'Kinner Kailash Guesthouse',price:'₹2,800/night',rating:4.6},{name:'Apple Blossom Homestay',price:'₹1,800/night',rating:4.7}],
+    calendar:[{month:'April–May',event:'Apple Blossom Season',icon:'🌸'},{month:'September',event:'Apple Harvest Festival',icon:'🍎'}],
+    spots:[{name:'Kinnaur Kailash View',type:'Mountain',detail:'Sacred 6,050m peak up close',imgType:'mountain',imgIdx:0},{name:'Hu-Bu-Lan-Kar Temple',type:'Temple',detail:'Ancient Kinnauri Buddhist shrine',imgType:'temple',imgIdx:0},{name:'Apple Orchard Self-Pick',type:'Experience',detail:'Red Delicious at 2,960m altitude',imgType:'forest',imgIdx:0},{name:'Sutlej River Viewpoint',type:'Scenic',detail:'Valley view from 3,000m',imgType:'valley',imgIdx:0},{name:'Sangla Valley (40km)',type:'Nature',detail:'Himalayan village panoramas',imgType:'hima_valley',imgIdx:0},{name:'Recong Peo Market',type:'Market',detail:'Kinnauri shawls & dry fruits',imgType:'market',imgIdx:0}]
+  },
+  // 33 ── MAHARASHTRA
+  { id:'chettinad2_lonar', name:'Lonar', state:'Maharashtra', title:'Meteor Crater Lake',
+    category:['Nature','Archeology'], position:{lat:19.9766,lng:76.5082},
+    distance:'620 km', time:'12h', heroImage: IMG.raj_desert,
+    description:"Lonar is the world's only known hyper-velocity impact crater in basaltic rock, formed by a meteorite strike 52,000 years ago. The resulting saline lake is neither acid nor base but alkaline, surrounded by ancient temples and forests that host langur monkeys and flamingos.",
+    food:[{name:'Vidarbha Mutton Curry',desc:'Dry-roasted spice mutton with sesame and poppy seed — the bold, slow-cooked Vidarbha style.'},{name:'Puran Poli',desc:'Sweet dal-filled flatbread drizzled with ghee — Maharashtra\'s most beloved festive sweet.'}],
+    hotels:[{name:'MTDC Resort Lonar',price:'₹2,800/night',rating:4.1},{name:'Crater View Camp',price:'₹3,500/night',rating:4.4}],
+    calendar:[{month:'November',event:'Archaeology Tourism Circuit',icon:'🏺'},{month:'March',event:'Flamingo Sighting Season',icon:'🦩'}],
+    spots:[{name:'Lonar Crater Rim Walk',type:'Geology',detail:'52,000-year-old impact crater',imgType:'desert',imgIdx:0},{name:'Alkaline Lake at Centre',type:'Lake',detail:'World\'s unique basaltic lake',imgType:'lake',imgIdx:0},{name:'Daitya Sudan Temple Ruins',type:'Archeology',detail:'8th-century submerged temple',imgType:'ruins',imgIdx:0},{name:'Forest Langur Troop',type:'Wildlife',detail:'Troops of grey langurs',imgType:'wildlife',imgIdx:1},{name:'Flamingo Colony',type:'Wildlife',detail:'Pink flamingos in dry season',imgType:'wildlife',imgIdx:0},{name:'Ajanta Caves (100km)',type:'UNESCO Site',detail:'2nd century Buddhist paintings',imgType:'cave',imgIdx:0}]
+  },
+  // 34 ── UTTARAKHAND
+  { id:'chopta', name:'Chopta', state:'Uttarakhand', title:'Mini Switzerland of Uttarakhand',
+    category:['Hill station','Nature','Temples'], position:{lat:30.3847,lng:79.1977},
+    distance:'440 km', time:'10h', heroImage: IMG.hima_meadow,
+    description:"A tiny hamlet at 2,680m in Rudraprayag district, Chopta sits amidst dense bugyals (alpine meadows) with a forest of rhododendron and oak. It's the starting point for the famous Tungnath temple trek — the world's highest Shiva temple at 3,680m — and Chandrashila summit at 4,000m.",
+    food:[{name:'Kafuli',desc:'Creamy spinach and fenugreek paste cooked with rice flour — Garhwali mountain greens at their best.'},{name:'Urad ke Pakode',desc:'Black lentil fritters fried in ghee — the mountain teahouse snack on cold evenings.'}],
+    hotels:[{name:'Chopta Tent Camp',price:'₹2,200/night',rating:4.6},{name:'Magic Valley Camps',price:'₹3,000/night',rating:4.8}],
+    calendar:[{month:'April–June',event:'Rhododendron Bloom',icon:'🌺'},{month:'December–February',event:'Snow Trek Season',icon:'❄️'}],
+    spots:[{name:'Tungnath Temple (3,680m)',type:'Temple',detail:"World's highest Shiva temple",imgType:'temple',imgIdx:0},{name:'Chandrashila Summit (4,000m)',type:'Trekking',detail:'360° Himalayan panorama',imgType:'mountain',imgIdx:0},{name:'Deoria Tal Trek',type:'Lake',detail:'Mirror lake reflects Chaukhamba',imgType:'lake',imgIdx:0},{name:'Rohini Bugyal',type:'Alpine Meadow',detail:'Wildflower meadow in June',imgType:'valley',imgIdx:0},{name:'Dugalbitta Forest',type:'Nature',detail:'Rhododendron forest walk',imgType:'forest',imgIdx:0},{name:'Ukhimath Winter Village',type:'Cultural',detail:'Tungnath deity\'s winter home',imgType:'heritage',imgIdx:0}]
+  },
+  // 35 ── MIZORAM
+  { id:'phawngpui', name:'Phawngpui Village', state:'Mizoram', title:"Mizoram's Blue Mountain",
+    category:['Nature','Culture'], position:{lat:22.8026,lng:93.3470},
+    distance:'2,500 km', time:'46h', heroImage: IMG.ne_forest,
+    description:"At the foot of Phawngpui — Blue Mountain — the highest peak in Mizoram at 2,157m, the villages of southern Mizoram maintain extraordinary traditions of community singing, bamboo dances, and handloom weaving. The national park around the summit shelters rare clouded leopards and the beautiful Mr. Jerdon's baza hawk.",
+    food:[{name:'Koat Pitha',desc:'Steamed banana leaf parcel of rice and pork — the Mizo celebration food.'},{name:'Chhangban',desc:'Fermented bamboo shoot with pork fat — smoky, sharp, and essential to Mizo cooking.'}],
+    hotels:[{name:'Phawngpui Eco Camp',price:'₹2,000/night',rating:4.5},{name:'Aizawl Heritage Stay',price:'₹3,200/night',rating:4.3}],
+    calendar:[{month:'March',event:'Chapchar Kut Spring Festival',icon:'🕺'},{month:'December',event:'Christmas Carol Competition',icon:'🎄'}],
+    spots:[{name:'Phawngpui Peak Summit',type:'Trekking',detail:'3-hour climb to 2,157m',imgType:'mountain',imgIdx:0},{name:'Bamboo Dance (Cheraw)',type:'Cultural',detail:'Mizo national dance form',imgType:'market',imgIdx:1},{name:'Rih Dil Lake (Myanmar border)',type:'Lake',detail:'Sacred heart-shaped lake',imgType:'lake',imgIdx:1},{name:'Palak Lake',type:'Lake',detail:'Mizoram\'s largest natural lake',imgType:'lake',imgIdx:0},{name:'Thenzawl Handloom Centre',type:'Craft',detail:'Puan and puanchei weaving',imgType:'craft',imgIdx:0},{name:'Lunglei Town View',type:'Scenic',detail:'Rolling hill panorama',imgType:'valley',imgIdx:1}]
+  },
+  // 36 ── RAJASTHAN
+  { id:'narlai', name:'Narlai', state:'Rajasthan', title:'The Village in the Rocks',
+    category:['History','Culture','Nature'], position:{lat:25.0736,lng:73.5220},
+    distance:'550 km', time:'11h', heroImage: IMG.raj_village,
+    description:"A village in Rajsamand district buried among enormous granite boulders in the Aravalli hills, Narlai has ancient Jain temples, a step-well, and the extraordinary Rawla Narlai heritage hotel built into the rocks themselves. Leopards roam the boulders at night.",
+    food:[{name:'Laal Maas',desc:'Fiery red mutton in a sauce of mathania chillies and yogurt — Rajasthan\'s most iconic meat dish.'},{name:'Daal Baati Churma',desc:'The classic Rajasthani feast of baked wheat balls, five-lentil dal, and crushed sweet churma.'}],
+    hotels:[{name:'Rawla Narlai Heritage',price:'₹8,500/night',rating:4.9},{name:'Village Heritage Camp',price:'₹4,500/night',rating:4.6}],
+    calendar:[{month:'October',event:'Leopard Tracking Season',icon:'🐆'},{month:'March',event:'Holi Village Celebrations',icon:'🎨'}],
+    spots:[{name:'Narlai Elephant Rock',type:'Natural Wonder',detail:'Enormous natural granite elephant',imgType:'mountain',imgIdx:1},{name:'Night Leopard Safari',type:'Wildlife',detail:'Leopards in the boulder field',imgType:'wildlife',imgIdx:0},{name:'Adinath Jain Temple',type:'Temple',detail:'1,000-year-old Jain shrine',imgType:'temple',imgIdx:1},{name:'Narlai Step-Well (Baoli)',type:'Heritage',detail:'Village water heritage site',imgType:'ruins',imgIdx:0},{name:'Horse Safari Through Aravalli',type:'Adventure',detail:'Marwari horse riding trails',imgType:'desert',imgIdx:1},{name:'Kumbhalgarh Fort (25km)',type:'Heritage',detail:'World\'s second longest wall',imgType:'heritage',imgIdx:0}]
+  },
+  // 37 ── GUJRAT
+  { id:'hodka', name:'Hodka', state:'Gujarat', title:'Kutchi Artisan Village',
+    category:['Culture','Nature'], position:{lat:23.6936,lng:69.9481},
+    distance:'1,380 km', time:'23h', heroImage: IMG.guj_craft,
+    description:"Hodka is a Harijana community village 60km from Bhuj that has built a remarkable community tourism model. Their distinctive Banni embroidery with tiny mirrors sewn into cloth in geometric patterns is among the world's most recognised textile arts, and the village's Shaam-e-Sarhad desert camp has won international recognition.",
+    food:[{name:'Banni Bajra Khichdi',desc:'Millet and lentil one-pot dish cooked over a wood fire by Maldharis — the pastoral community\'s energy food.'},{name:'Kutchi Khaman',desc:'Fermented chickpea cake steamed and tempered — the Gujarati snack at its salty-sour best.'}],
+    hotels:[{name:'Shaam-e-Sarhad Hodka',price:'₹6,500/night',rating:4.9},{name:'Runn Riders Camp',price:'₹4,500/night',rating:4.6}],
+    calendar:[{month:'November',event:'Craft Bazaar Season',icon:'🪡'},{month:'January',event:'Uttarayan Kite Festival',icon:'🪁'}],
+    spots:[{name:'Banni Embroidery Workshop',type:'Craft',detail:'Mirrorwork textile live demo',imgType:'craft',imgIdx:0},{name:'Kala Dungar Black Hill',type:'Viewpoint',detail:'Highest point in Kutch',imgType:'mountain',imgIdx:1},{name:'Banni Grasslands Reserve',type:'Wildlife',detail:'Wild ass & desert fox',imgType:'wildlife',imgIdx:0},{name:'Traditional Bhonga Hut Stay',type:'Experience',detail:'Stay in circular mud homes',imgType:'desert',imgIdx:0},{name:'Craft Trail Villages',type:'Cultural',detail:'12 artisan villages nearby',imgType:'market',imgIdx:0},{name:'Flamingo Sanctuary Banni',type:'Wildlife',detail:'Seasonal flamingo flocks',imgType:'wildlife',imgIdx:1}]
+  },
+  // 38 ── HIMACHAL PRADESH
+  { id:'barot', name:'Barot Valley', state:'Himachal Pradesh', title:'The Forgotten Paradise',
+    category:['Nature','Hill station'], position:{lat:31.9560,lng:76.8890},
+    distance:'450 km', time:'10h', heroImage: IMG.hima_lake,
+    description:"Barot is a remote valley in Mandi district where the Uhl river cascades through deodar forests to the Bada Bhangal trailhead. The valley's trout hatcheries, British-era Shanan powerhouse, and complete absence of tourist infrastructure make it feel extraordinarily pristine.",
+    food:[{name:'Trout Fry Barot Style',desc:'Uhl river trout marinated in ajwain and lemon, pan-fried in mustard oil at the riverside dhaba.'},{name:'Pahadi Chicken Curry',desc:'Free-range hill chicken with mountain herbs and dry red chillies in an earthy, thick gravy.'}],
+    hotels:[{name:'Uhl River Camp',price:'₹3,200/night',rating:4.7},{name:'Forest Rest House Barot',price:'₹1,200/night',rating:4.4}],
+    calendar:[{month:'April–June',event:'Trout Fishing Season',icon:'🎣'},{month:'October',event:'Apple & Pear Harvest',icon:'🍐'}],
+    spots:[{name:'Shanan Powerhouse',type:'Heritage',detail:'1932 British hydroelectric plant',imgType:'heritage',imgIdx:0},{name:'Trout Hatchery Visit',type:'Experience',detail:'Trout cultivation at source',imgType:'lake',imgIdx:0},{name:'Nargu Wildlife Sanctuary',type:'Wildlife',detail:'Barking deer & Himalayan bear',imgType:'wildlife',imgIdx:0},{name:'Bada Bhangal Trek',type:'Trekking',detail:'Remote 7-day crossing',imgType:'mountain',imgIdx:1},{name:'Chotti Haridwar Waterfall',type:'Waterfall',detail:'Sacred mountain spring',imgType:'waterfall',imgIdx:0},{name:'Uhl River Camping',type:'Adventure',detail:'Overnight riverside camps',imgType:'mountain',imgIdx:0}]
+  },
+  // 39 ── MIZORAM/ASSAM
+  { id:'dawki', name:'Dawki', state:'Meghalaya', title:'Crystal River on the Border',
+    category:['Nature'], position:{lat:25.1892,lng:92.0271},
+    distance:'2,750 km', time:'50h', heroImage: IMG.ne_mist,
+    description:"The Umngot river at Dawki is so transparent that boats appear to float in mid-air above the riverbed — it is arguably the clearest river in Asia. On the Bangladesh border, Dawki is also a major trading post with a weekly bazaar that draws traders from both countries.",
+    food:[{name:'Tungrymbai',desc:'Fermented soybean paste stir-fried with local greens and chilli — Khasi umami bomb.'},{name:'Rice Beer Kiad Kiad',desc:'Fermented rice drink brewed in earthen pots — the Khasi community\'s traditional celebratory drink.'}],
+    hotels:[{name:'Dawki River Camp',price:'₹3,500/night',rating:4.6},{name:'Border View Homestay',price:'₹1,800/night',rating:4.5}],
+    calendar:[{month:'February',event:'Shad Suk Mynsiem Dance Festival',icon:'💃'},{month:'November',event:'Boating Season on Umngot',icon:'🚣'}],
+    spots:[{name:'Umngot River Boating',type:'Natural Wonder',detail:'Glass-clear river, boats float on air',imgType:'lake',imgIdx:0},{name:'Bangladesh Border View',type:'Landmark',detail:'Dual-country panorama',imgType:'valley',imgIdx:1},{name:'Shnongpdeng Cliff Jump',type:'Adventure',detail:'Natural pool cliff jumping',imgType:'beach',imgIdx:0},{name:'Mawlynnong Cleanest Village',type:'Cultural',detail:'Asia\'s cleanest village, 3km',imgType:'forest',imgIdx:0},{name:'Border Haat Weekly Market',type:'Market',detail:'India-Bangladesh trading market',imgType:'market',imgIdx:1},{name:'Krang Suri Waterfall',type:'Waterfall',detail:'Turquoise pool waterfall',imgType:'waterfall',imgIdx:0}]
+  },
+  // 40 ── ANDHRA PRADESH
+  { id:'belum_caves', name:'Belum Village', state:'Andhra Pradesh', title:'Caves of a Thousand Years',
+    category:['Nature','Archeology'], position:{lat:15.1530,lng:78.1070},
+    distance:'380 km', time:'7h', heroImage: IMG.raj_desert,
+    description:"The village of Belum sits above the second-largest cave system in India — 3.5km of passages, crystal formations, freshwater siphons, and caverns where Buddhist monks meditated 2,000 years ago. The Papikondalu gorge of the Godavari river begins just 100km away.",
+    food:[{name:'Rayalaseema Pulihora',desc:'Tamarind rice tempered with peanuts, dried red chillies, and curry leaves — Andhra\'s beloved rice dish.'},{name:'Jonna Rotte',desc:'Sorghum flatbread cooked on an open flame — the traditional bread of rural Andhra.'}],
+    hotels:[{name:'APTDC Belum Caves Resort',price:'₹2,200/night',rating:4.2},{name:'Belum Heritage Homestay',price:'₹1,500/night',rating:4.4}],
+    calendar:[{month:'November',event:'Karthika Deepam at Caves',icon:'🪔'},{month:'February',event:'Archaeology Walk Weekend',icon:'🏺'}],
+    spots:[{name:'Belum Cave System',type:'Geology',detail:'3.5km India\'s 2nd largest cave',imgType:'cave',imgIdx:0},{name:'Buddhist Meditation Chambers',type:'Archeology',detail:'2,000-year monastic cells',imgType:'cave',imgIdx:1},{name:'Crystal Stalagmite Hall',type:'Natural Wonder',detail:'Giant formations underground',imgType:'cave',imgIdx:0},{name:'Tadipatri Temples (30km)',type:'Temple',detail:'Intricate 16th-century carvings',imgType:'temple',imgIdx:1},{name:'Kondareddy Buruju',type:'Heritage',detail:'Kurnool Nawab watchtower',imgType:'heritage',imgIdx:1},{name:'Papikondalu Boat Cruise',type:'Scenic',detail:'Godavari gorge journey',imgType:'valley',imgIdx:1}]
+  },
+  // 41 ── ODISHA
+  { id:'tikarpada', name:'Tikarpada', state:'Odisha', title:'Tiger & Crocodile Confluence',
+    category:['Nature'], position:{lat:20.6217,lng:84.9960},
+    distance:'1,600 km', time:'28h', heroImage: IMG.chh_forest,
+    description:"At the confluence of the Mahanadi and Sondhi rivers inside Satkosia Tiger Reserve, the village of Tikarpada offers a rare combination: Bengal tigers, gharial crocodiles, and leopards in the same canyon gorge. Boat safaris on the Mahanadi through the gorge are extraordinary.",
+    food:[{name:'Pakhala Bhata',desc:'Fermented rice soaked overnight in water — served with roasted brinjal, spinach, and dried fish. An Odisha summer essential.'},{name:'Macha Ghanta',desc:'Whole fish head curry with mashed vegetables — a rustic Odisha delicacy of remarkable depth.'}],
+    hotels:[{name:'Satkosia Jungle Resort',price:'₹4,500/night',rating:4.6},{name:'Mahanadi Tented Camp',price:'₹3,200/night',rating:4.5}],
+    calendar:[{month:'October–February',event:'Gharial Nesting Season',icon:'🐊'},{month:'November',event:'Tiger Reserve Safari Peak',icon:'🐯'}],
+    spots:[{name:'Mahanadi Gorge Boat Safari',type:'Wildlife',detail:'Tigers & gharials from the water',imgType:'wildlife',imgIdx:0},{name:'Gharial Breeding Programme',type:'Wildlife',detail:'Critical conservation project',imgType:'wildlife',imgIdx:1},{name:'Satkosia Butterfly Reserve',type:'Nature',detail:'250+ butterfly species',imgType:'forest',imgIdx:0},{name:'Eagle Nest Viewpoint',type:'Scenic',detail:'Canyon panorama at sunset',imgType:'valley',imgIdx:0},{name:'Budhamaraja Temple',type:'Temple',detail:'Forest Shiva shrine on cliff',imgType:'temple',imgIdx:1},{name:'Tikarpada Hanging Bridge',type:'Landmark',detail:'Suspension bridge over Mahanadi',imgType:'mountain',imgIdx:0}]
+  },
+  // 42 ── HIMACHAL
+  { id:'mandi_prashar', name:'Prashar Lake', state:'Himachal Pradesh', title:'The Floating Island Lake',
+    category:['Nature','Temples'], position:{lat:31.7302,lng:77.2090},
+    distance:'450 km', time:'10h', heroImage: IMG.hima_lake,
+    description:"High above Mandi district at 2,730m, Prashar Lake is a mystery — it has a small floating island that moves with the wind, and the three-storey wooden pagoda temple on its banks is among the finest examples of Himachali hill architecture. Snow-capped Dhauladhar peaks frame the horizon.",
+    food:[{name:'Madra',desc:'Chickpeas slow-cooked in yogurt and spices — the official festival dish of Mandi district Himachal.'},{name:'Tudkiya Bhath',desc:'Himachali spiced rice with lentils and yogurt garnish — a complete one-pot meal.'}],
+    hotels:[{name:'Prashar Lake Camping',price:'₹2,500/night',rating:4.7},{name:'Mandi Beas View',price:'₹1,800/night',rating:4.3}],
+    calendar:[{month:'April',event:'Shivaratri Mela',icon:'🔱'},{month:'July',event:'Lake Full Season',icon:'💧'}],
+    spots:[{name:'Prashar Floating Island',type:'Natural Wonder',detail:'Island moves with wind',imgType:'lake',imgIdx:0},{name:'3-Story Pagoda Temple',type:'Temple',detail:'Finest Himachali wood architecture',imgType:'temple',imgIdx:0},{name:'Dhauladhar Peak View',type:'Mountain',detail:'Snow-capped range panorama',imgType:'mountain',imgIdx:0},{name:'Trek from Baggi Village',type:'Trekking',detail:'7km forest ascent to lake',imgType:'forest',imgIdx:0},{name:'Winter Snow Camping',type:'Adventure',detail:'Feb–March snowscape',imgType:'mountain',imgIdx:1},{name:'Mandi Town (40km)',type:'Heritage',detail:'81 medieval Shaiva temples',imgType:'heritage',imgIdx:1}]
+  },
+  // 43 ── KARNATAKA
+  { id:'coorg_village', name:'Kakkabe', state:'Karnataka (Coorg)', title:'The Coorg Village Hideaway',
+    category:['Nature','Hill station'], position:{lat:11.9467,lng:75.7330},
+    distance:'510 km', time:'11h', heroImage: IMG.kar_coffee,
+    description:"Tucked between Coorg's coffee estates and the misty Pushpagiri hills near the Brahmagiri range, Kakkabe is a small village used as the base to trek to Tadiandamol — Coorg's highest peak. Around it spread a sea of coffee, cardamom, and pepper vines under shading silver oak trees.",
+    food:[{name:'Pandi Curry',desc:'Kodava pork cooked with kachampuli (Coorg vinegar) — the definitive dish of the Kodava warrior community.'},{name:'Kadambuttu',desc:'Steamed rice dumplings served with thick chicken or mutton curry — Coorg\'s rice-based everyday meal.'}],
+    hotels:[{name:'Rainforest Retreat Kakkabe',price:'₹4,800/night',rating:4.7},{name:'Old Kent Estate',price:'₹7,500/night',rating:4.9}],
+    calendar:[{month:'November',event:'Kaveri Sankramana River Festival',icon:'🌊'},{month:'February',event:'Coffee Blossom Season',icon:'🌼'}],
+    spots:[{name:'Tadiandamol Peak Trek (1,748m)',type:'Trekking',detail:"Coorg's highest peak",imgType:'mountain',imgIdx:0},{name:'Coffee Estate Plantation Walk',type:'Experience',detail:'Shade-grown arabica estates',imgType:'forest',imgIdx:0},{name:'Brahmagiri Wildlife Sanctuary',type:'Wildlife',detail:'Gaur, leopard, and Nilgiri tahr',imgType:'wildlife',imgIdx:0},{name:'Iruppu Falls',type:'Waterfall',detail:'Sacred falls in Brahmagiri forest',imgType:'waterfall',imgIdx:0},{name:'Nagarhole National Park',type:'Wildlife',detail:'Tiger, elephant & leopard',imgType:'wildlife',imgIdx:1},{name:'Honey Valley',type:'Nature',detail:'Bird-rich organic farm',imgType:'valley',imgIdx:0}]
+  },
+  // 44 ── WEST BENGAL
+  { id:'samsing', name:'Samsing', state:'West Bengal', title:'Dooars Elephant Country',
+    category:['Nature','Hill station'], position:{lat:26.7800,lng:88.8700},
+    distance:'1,720 km', time:'30h', heroImage: IMG.ne_paddy,
+    description:"In the Dooars foothills where the Himalayas fall into Bengal's flat tea country, Samsing is a tiny village surrounded by elephant corridors, tea gardens, and the dense forests of Gorumara National Park. Wild elephants walk through the village at night on their ancient routes.",
+    food:[{name:'Bengalee Fish Mustard',desc:'River fish steamed in a sharp mustard and turmeric paste — Bengal\'s most essential daily dish.'},{name:'Momo with Tibetan Sauce',desc:'Steamed dumplings with fermented chilli sauce — the hill communities\' contribution to Bengali culture.'}],
+    hotels:[{name:'Elephant View Camp Samsing',price:'₹3,500/night',rating:4.7},{name:'Dooars Forest Bungalow',price:'₹2,200/night',rating:4.5}],
+    calendar:[{month:'October–February',event:'Elephant Migration Through Village',icon:'🐘'},{month:'April',event:'Tea Plucking Season',icon:'🍃'}],
+    spots:[{name:'Wild Elephant Night Watch',type:'Wildlife',detail:'Elephants pass the village at night',imgType:'wildlife',imgIdx:0},{name:'Gorumara Safari',type:'Wildlife',detail:'Rhino, bison & leopard jeep safari',imgType:'wildlife',imgIdx:1},{name:'Samsing Tea Garden Walk',type:'Experience',detail:'Walk through working tea gardens',imgType:'paddy',imgIdx:0},{name:'Rocky Island Rocky Island',type:'Scenic',detail:'Murti river mid-stream boulders',imgType:'mountain',imgIdx:1},{name:'Buxa Tiger Reserve',type:'Wildlife',detail:'Dense Sal forest reserve',imgType:'forest',imgIdx:1},{name:'Jaldapara National Park',type:'Wildlife',detail:'One-horned rhinoceros habitat',imgType:'wildlife',imgIdx:0}]
+  },
+  // 45 ── ANDAMAN & NICOBAR
+  { id:'ross_island', name:'Neil Island', state:'Andaman & Nicobar', title:'The Coral Paradise',
+    category:['Beach','Nature'], position:{lat:11.8340,lng:93.0480},
+    distance:'2,150 km', time:'Sea + flight',heroImage: IMG.south_beach,
+    description:"Neil Island (Shaheed Dweep) is the smallest inhabited island of the Andaman archipelago, known for its unspoilt beaches, bioluminescent plankton at night, and spectacular snorkelling among pristine coral reefs. At low tide natural rock bridges create dramatic coastal formations.",
+    food:[{name:'Andamanese Grilled Lobster',desc:'Freshly caught rock lobster grilled with turmeric and coconut cream on an open fire.'},{name:'South Indian Thali on Banana Leaf',desc:'Settlement-era South Indian cuisine adapted with Andaman seafood — rice, sambar, and reef fish.'}],
+    hotels:[{name:'Tango Beach Resort',price:'₹6,500/night',rating:4.7},{name:'Summer Sands Beach Resort',price:'₹4,800/night',rating:4.5}],
+    calendar:[{month:'October–May',event:'Diving & Snorkeling Season',icon:'🤿'},{month:'January',event:'Sea Turtle Nesting Season',icon:'🐢'}],
+    spots:[{name:'Laxmanpur Beach',type:'Beach',detail:'Sunset & natural rock bridges',imgType:'beach',imgIdx:0},{name:'Bharatpur Coral Reef',type:'Snorkeling',detail:'Hard coral gardens, zero crowds',imgType:'beach',imgIdx:1},{name:'Bioluminescent Plankton',type:'Natural Wonder',detail:'Glowing sea at night',imgType:'lake',imgIdx:1},{name:'Natural Bridge (Low Tide)',type:'Geology',detail:'Rock arch over the sea',imgType:'ruins',imgIdx:0},{name:'Sea Kayaking Circuit',type:'Adventure',detail:'Half-day island circumnavigation',imgType:'mountain',imgIdx:0},{name:'Bird-Watching Jungle Trail',type:'Wildlife',detail:'Andaman woodpecker & parakeet',imgType:'wildlife',imgIdx:1}]
+  },
+  // 46 ── JHARKHAND
+  { id:'betla', name:'Betla', state:'Jharkhand', title:'Tiger Country of Jharkhand',
+    category:['Nature','History'], position:{lat:23.9258,lng:84.1244},
+    distance:'1,100 km', time:'20h', heroImage: IMG.chh_forest,
+    description:"Betla National Park, India's first tiger reserve to be notified under Project Tiger in 1974, sits in Jharkhand's Palamu forests. The ruins of two ancient Chero dynasty forts lie deep inside the forest, accessible on elephant back, while the dry sal and bamboo forests provide excellent wildlife sightings.",
+    food:[{name:'Handia',desc:'Traditional rice beer fermented in earthen pots using forest herbs — the tribal community\'s ceremonial drink.'},{name:'Pittha',desc:'Stuffed rice flour dumplings with sesame and jaggery — the Jharkhand harvest festival sweet.'}],
+    hotels:[{name:'Van Vihar Tourist Complex',price:'₹2,800/night',rating:4.2},{name:'Jungle View Betla',price:'₹2,000/night',rating:4.3}],
+    calendar:[{month:'November–May',event:'Safari Open Season',icon:'🐯'},{month:'March',event:'Sarhul Tribal Spring Festival',icon:'🌺'}],
+    spots:[{name:'Palamu Tiger Safari',type:'Wildlife',detail:'Elephant & jeep safaris',imgType:'wildlife',imgIdx:0},{name:'Old Palamu Fort',type:'Heritage',detail:'16th-century Chero dynasty ruins',imgType:'ruins',imgIdx:0},{name:'New Palamu Fort (Jungle)',type:'Heritage',detail:'Fort accessible by elephant',imgType:'heritage',imgIdx:0},{name:'Kechki Waterfall',type:'Waterfall',detail:'Forest waterfall inside reserve',imgType:'waterfall',imgIdx:0},{name:'Betla Crocodile Pool',type:'Wildlife',detail:'Mugger crocodile sightings',imgType:'wildlife',imgIdx:1},{name:'Sarhul Village Ceremony',type:'Cultural',detail:'Flower-worship tribal ritual',imgType:'market',imgIdx:0}]
+  },
+  // 47 ── UTTARAKHAND
+  { id:'chakrata', name:'Chakrata', state:'Uttarakhand', title:'Jaunsari Tribal Hills',
+    category:['Nature','Hill station','Culture'], position:{lat:30.6895,lng:77.8668},
+    distance:'330 km', time:'7h', heroImage: IMG.hima_meadow,
+    description:"A restricted cantonment hill station at 2,118m, Chakrata in Dehradun district retains the quiet of a 19th-century British hill station. The surrounding Jaunsar-Bawar region is home to the Jaunsari tribe who practice polyandry — one woman may marry two brothers — a living Mahabharata tradition.",
+    food:[{name:'Jhangora Kheer',desc:'Barnyard millet pudding with jaggery and nuts — the Garhwali mountain sweet of great antiquity.'},{name:'Mandua Roti',desc:'Dark ragi flatbread with local ghee and raw garlic chutney — Chakrata\'s everyday staple.'}],
+    hotels:[{name:'Deoban Forest Bungalow',price:'₹2,200/night',rating:4.6},{name:'Chakrata Valley Camp',price:'₹1,800/night',rating:4.5}],
+    calendar:[{month:'May–June',event:'Rhododendron Forest Walk',icon:'🌺'},{month:'January',event:'Snow Camping at Deoban',icon:'❄️'}],
+    spots:[{name:'Tiger Falls (312 feet)',type:'Waterfall',detail:'One of India\'s highest falls',imgType:'waterfall',imgIdx:0},{name:'Deoban Forest & Rhododendrons',type:'Nature',detail:'90% rhododendron forest',imgType:'forest',imgIdx:0},{name:'Chilmiri Neck Viewpoint',type:'Scenic',detail:'Himalayan chain panorama',imgType:'mountain',imgIdx:0},{name:'Jaunsari Tribal Village',type:'Cultural',detail:'Polyandrous Mahabharata tribe',imgType:'valley',imgIdx:1},{name:'Kanasar Deodar Forest',type:'Nature',detail:'Ancient deodar cedar forest',imgType:'forest',imgIdx:1},{name:'Mundali Ski Slopes (Winter)',type:'Adventure',detail:'Beginner skiing in snowfall',imgType:'mountain',imgIdx:1}]
+  },
+  // 48 ── TELANGANA
+  { id:'warangal', name:'Palampet', state:'Telangana', title:'Kakatiya Wastelands Temple',
+    category:['History','Temples','Archeology'], position:{lat:17.9982,lng:79.9189},
+    distance:'220 km', time:'4h', heroImage: IMG.heritage,
+    description:"Deep in the Ramappa lake shores near Warangal, the Ramappa Temple (formally Ramalingesvara) was built in 1213 CE and was inscribed as a UNESCO World Heritage Site in 2021. Its 'floating bricks' — so light they float on water — and the extraordinary bracket figures are considered the zenith of Kakatiya sculpture.",
+    food:[{name:'Sarvapindi',desc:'Rice flour crepe pressed thin and crisped with sesame, peanuts, and fresh curry leaves — Telangana\'s own invention.'},{name:'Jonna Rotte with Kodi Pulusu',desc:'Sorghum flatbread with tangy chicken curry — the Telangana village combination.'}],
+    hotels:[{name:'Hotel Ramappa Residency',price:'₹2,500/night',rating:4.3},{name:'Warangal Heritage Inn',price:'₹1,800/night',rating:4.1}],
+    calendar:[{month:'February',event:'Ramappa Temple Light Festival',icon:'🪔'},{month:'January',event:'Kakatiya Mahotsav',icon:'🏛️'}],
+    spots:[{name:'Ramappa Temple (UNESCO)',type:'UNESCO Site',detail:'Floating brick 1213 CE temple',imgType:'temple',imgIdx:0},{name:'Ramappa Lake Boat Ride',type:'Scenic',detail:'Temple reflected in water',imgType:'lake',imgIdx:0},{name:'Kakatiya Rock Garden',type:'Heritage',detail:'Recycled medieval stone collection',imgType:'ruins',imgIdx:0},{name:'Thousand Pillar Temple',type:'Temple',detail:'Kakatiya star-plan temple',imgType:'temple',imgIdx:1},{name:'Warangal Fort Ruins',type:'Archeology',detail:'1199 CE Kakatiya citadel',imgType:'ruins',imgIdx:1},{name:'Pakhal Lake Wildlife Sanctuary',type:'Wildlife',detail:'Deer, crocodile & migratory birds',imgType:'wildlife',imgIdx:0}]
+  },
+  // 49 ── HARYANA
+  { id:'morni_hills', name:'Morni Hills', state:'Haryana', title:"Haryana's Only Hill Station",
+    category:['Hill station','Nature'], position:{lat:30.6815,lng:77.0740},
+    distance:'280 km', time:'5h', heroImage: IMG.hima_meadow,
+    description:"Rising from Panchkula district to 1,267m, Morni Hills is Haryana's only hill station — a ridge of forested hills with two linked crater lakes of different water levels that are a geological curiosity. Its proximity to Chandigarh and Kasauli makes it an underrated weekend mountain escape.",
+    food:[{name:'Haryanvi Kadhi',desc:'Yogurt and besan (gram flour) curry with deep-fried pakoras — the definitive Haryanvi home dish.'},{name:'Bajre ki Khichdi',desc:'Pearl millet and lentil porridge cooked with ghee — Haryana\'s robust winter staple.'}],
+    hotels:[{name:'Morni Eco-Camp',price:'₹2,200/night',rating:4.4},{name:'Forest Rest House Morni',price:'₹1,500/night',rating:4.2}],
+    calendar:[{month:'February',event:'Surajkund Crafts Mela Nearby',icon:'🎪'},{month:'October',event:'Monsoon Aftermath Green Hills',icon:'🌿'}],
+    spots:[{name:'Twin Lakes (Tikkar Taal)',type:'Lake',detail:'Linked craters at different levels',imgType:'lake',imgIdx:0},{name:'Morni Fort Ruins',type:'Heritage',detail:'Ancient hilltop fort on ridge',imgType:'ruins',imgIdx:1},{name:'Yadavindra Garden Walk',type:'Gardens',detail:'Mughal-style terraced garden',imgType:'valley',imgIdx:0},{name:'Kotahi Devi Temple',type:'Temple',detail:'Hilltop goddess temple',imgType:'temple',imgIdx:1},{name:'Adventure Camp Activities',type:'Adventure',detail:'Trekking, zip-line & rappelling',imgType:'mountain',imgIdx:0},{name:'Pinjore Heritage Garden',type:'Heritage',detail:'Mughal Pinjore Garden',imgType:'heritage',imgIdx:1}]
+  },
+  // 50 ── LAKSHADWEEP
+  { id:'agatti', name:'Agatti Island', state:'Lakshadweep', title:'The Coral Atoll',
+    category:['Beach','Nature'], position:{lat:10.8474,lng:72.1937},
+    distance:'Sea from Kochi', time:'14h ship / 1.5h flight', heroImage: IMG.south_beach,
+    description:"Agatti is the entry point to the Lakshadweep archipelago — 36 coral atolls in the Arabian Sea. Its lagoon of unreal turquoise clarity, the reef fish diversity and the traditional Lakshadweepan fishing culture make it one of India's most extraordinary natural settings.",
+    food:[{name:'Tuna Mas Curry',desc:'Fresh yellowfin tuna in a thin coconut and turmeric broth — the essential daily curry of Lakshadweep.'},{name:'Kavaratti Biryani',desc:'Fragrant rice cooked with reef fish, coconut, and island spices — the islands\' festive rice dish.'}],
+    hotels:[{name:'Agatti Island Beach Resort',price:'₹8,500/night',rating:4.7},{name:'Lakshadweep Tourism Cottages',price:'₹5,500/night',rating:4.4}],
+    calendar:[{month:'October–April',event:'Sailing & Snorkeling Season',icon:'⛵'},{month:'January',event:'Lakshadweep Mahotsav',icon:'🎉'}],
+    spots:[{name:'Agatti Lagoon Snorkeling',type:'Snorkeling',detail:'Pristine coral gardens',imgType:'beach',imgIdx:0},{name:'Glass-Bottom Boat Reef Tour',type:'Experience',detail:'View reef without getting wet',imgType:'beach',imgIdx:1},{name:'Bangaram Uninhabited Atoll',type:'Beach',detail:'Private island day trip',imgType:'lake',imgIdx:1},{name:'Traditional Fishing Boat (Odam)',type:'Experience',detail:'Sail with local fishermen',imgType:'beach',imgIdx:0},{name:'Kalpitti Bird Island',type:'Wildlife',detail:'Tern nesting colony',imgType:'wildlife',imgIdx:1},{name:'Scuba Diving Certification',type:'Adventure',detail:'PADI courses in the lagoon',imgType:'beach',imgIdx:1}]
+  }
+];
+
+const CATEGORIES = ["Hill station","Beach","Archeology","Temples","History","Nature","Culture"];
+
+const MAP_STYLES = [
+  {featureType:"water",elementType:"geometry",stylers:[{color:"#dce8e3"}]},
+  {featureType:"landscape",elementType:"geometry",stylers:[{color:"#f2ede3"}]},
+  {featureType:"road.highway",elementType:"geometry.fill",stylers:[{color:"#ffffff"}]},
+  {featureType:"road.arterial",elementType:"geometry",stylers:[{color:"#f5f5f0"}]},
+  {featureType:"road.local",elementType:"geometry",stylers:[{color:"#fafaf8"}]},
+  {featureType:"poi",elementType:"geometry",stylers:[{color:"#e8f4e8"}]},
+  {featureType:"poi.park",elementType:"geometry",stylers:[{color:"#c8e6c9"}]},
+  {elementType:"labels.text.stroke",stylers:[{color:"#ffffff"}]},
+  {elementType:"labels.text.fill",stylers:[{color:"#4a5568"}]},
+  {elementType:"labels.icon",stylers:[{visibility:"off"}]},
+  {featureType:"administrative",elementType:"geometry.stroke",stylers:[{color:"#d4c5a9"},{weight:0.8}]},
+  {featureType:"transit",elementType:"geometry",stylers:[{visibility:"off"}]}
+];
+
+// ── STATE ──
+let selectedCats = [];
+let activeCatalogCats = [];
+let searchQuery = '';
+let mapReady = false;
+
+// ── VIEWS ──
+function showView(n) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById('view-'+n).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── MARQUEE ──
+function buildMarquee() {
+  const t = document.getElementById('marquee-track');
+  const items = GEMS.map(g => `<span class="marquee-item"><span class="dot">◆</span>${g.name}, ${g.state}</span>`).join('');
+  t.innerHTML = items + items;
+}
+
+// ── CATALOG ──
+function renderCatalog() {
+  let list = GEMS;
+  if (activeCatalogCats.length > 0) list = list.filter(g => g.category.some(c => activeCatalogCats.includes(c)));
+  if (searchQuery.trim()) {
+    const q = searchQuery.toLowerCase();
+    list = list.filter(g => g.name.toLowerCase().includes(q) || g.state.toLowerCase().includes(q) || g.title.toLowerCase().includes(q) || g.category.some(c => c.toLowerCase().includes(q)));
+  }
+  document.getElementById('catalog-count').textContent = `Showing ${list.length} of ${GEMS.length} villages`;
+  document.getElementById('catalog-grid').innerHTML = list.map(gem => `
+    <div class="gem-card" onclick="openDetails('${gem.id}')">
+      <div class="gem-card-visual">
+        <img src="${gem.heroImage}" alt="${gem.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&auto=format&fit=crop'"/>
+        <div class="gem-card-overlay"></div>
+        <div class="gem-card-cats">${gem.category.map(c=>`<span class="gem-cat-tag">${c}</span>`).join('')}</div>
+        <div class="gem-card-info">
+          <span class="gem-card-state">${gem.state}</span>
+          <span class="gem-card-name">${gem.name}</span>
+        </div>
+      </div>
+    </div>
+  `).join('') || `<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--slate);font-weight:700">No villages match your search.</div>`;
+}
+
+function filterCatalog() {
+  searchQuery = document.getElementById('catalog-search').value;
+  renderCatalog();
+}
+
+function renderCatalogFilterCats() {
+  document.getElementById('catalog-filter-cats').innerHTML = CATEGORIES.map(c => `
+    <button class="filter-btn ${activeCatalogCats.includes(c)?'active':''}" onclick="toggleCatalogCat('${c}')">${c}</button>
+  `).join('');
+}
+function toggleCatalogCat(c) {
+  activeCatalogCats = activeCatalogCats.includes(c) ? activeCatalogCats.filter(x=>x!==c) : [...activeCatalogCats,c];
+  renderCatalogFilterCats();
+  renderCatalog();
+}
+
+// ── DETAILS ──
+function openDetails(id) {
+  const gem = GEMS.find(g => g.id === id);
+  if (!gem) return;
+
+  const img = document.getElementById('d-hero-img');
+  img.src = gem.heroImage;
+  img.onerror = () => { img.src = 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=2000&auto=format&fit=crop'; };
+  document.getElementById('d-state-label').textContent = gem.state;
+  document.getElementById('d-hero-name').textContent = gem.name;
+  document.getElementById('d-hero-subtitle').textContent = gem.title;
+  document.getElementById('d-desc').textContent = gem.description;
+  document.getElementById('d-distance').textContent = gem.distance;
+  document.getElementById('d-time').textContent = gem.time;
+
+  document.getElementById('d-route-btn').onclick = () => {
+    window.open(`https://www.google.com/maps/dir/?api=1&destination=${gem.position.lat},${gem.position.lng}&travelmode=driving`,'_blank');
+  };
+
+  document.getElementById('d-food').innerHTML = gem.food.map(f => `
+    <div class="food-item"><div class="food-name">${f.name}</div><div class="food-desc">${f.desc}</div></div>
+  `).join('');
+
+  document.getElementById('d-calendar').innerHTML = gem.calendar.map(c => `
+    <div class="cal-item"><span class="cal-emoji">${c.icon}</span><div>
+      <div class="cal-month">${c.month}</div><div class="cal-event">${c.event}</div>
+    </div></div>
+  `).join('');
+
+  document.getElementById('d-hotels').innerHTML = gem.hotels.map(h => {
+    const fl = Math.floor(h.rating);
+    const stars = [1,2,3,4,5].map(i=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="${i<=fl?'star-on':'star-off'}"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`).join('');
+    return `<div class="hotel-item">
+      <div class="hotel-row"><div><div class="hotel-name">${h.name}</div><div class="hotel-stars">${stars}</div></div><div class="hotel-price">${h.price}</div></div>
+      <button class="btn-book" onclick="window.open('https://www.booking.com/searchresults.html?ss=${encodeURIComponent(h.name+' '+gem.name)}','_blank')">
+        Book on Booking.com <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </button></div>`;
+  }).join('');
+
+  document.getElementById('d-spots-grid').innerHTML = gem.spots.map(s => {
+    const imgSrc = si(s.imgType, s.imgIdx);
+    return `<div class="spot-card" onclick="openLightbox('${imgSrc}','${s.name}')">
+      <div class="spot-img">
+        <img src="${imgSrc}" alt="${s.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&auto=format&fit=crop'"/>
+        <span class="spot-type-badge">${s.type}</span>
+      </div>
+      <div class="spot-info"><div class="spot-name">${s.name}</div><div class="spot-detail">${s.detail}</div></div>
+    </div>`;
+  }).join('');
+
+  showView('details');
+}
+
+// ── LIGHTBOX ──
+function openLightbox(src, alt) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-img').alt = alt;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+
+// ── PLANNER ──
+function renderPlannerCats() {
+  document.getElementById('planner-cats').innerHTML = CATEGORIES.map(c => `
+    <button class="cat-btn ${selectedCats.includes(c)?'active':''}" onclick="togglePlannerCat('${c}')">${c}</button>
+  `).join('');
+}
+function togglePlannerCat(c) {
+  selectedCats = selectedCats.includes(c) ? selectedCats.filter(x=>x!==c) : [...selectedCats,c];
+  renderPlannerCats();
+}
+function runSearch() {
+  const btn = document.getElementById('btn-search');
+  btn.disabled = true;
+  btn.innerHTML = `<div class="loader-ring" style="width:26px;height:26px;border-width:3px;border-color:rgba(255,255,255,.2);border-top-color:white"></div>`;
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.innerHTML = `Discover Destinations <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="19" height="19"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`;
+    renderResults();
+    showView('results');
+  }, 1400);
+}
+function renderResults() {
+  const filtered = selectedCats.length === 0 ? GEMS : GEMS.filter(g => g.category.some(c => selectedCats.includes(c)));
+  document.getElementById('results-count').textContent = `Showing ${filtered.length} of ${GEMS.length} heritage villages`;
+  document.getElementById('results-grid').innerHTML = filtered.length === 0 ?
+    `<div style="grid-column:1/-1;text-align:center;padding:80px;color:var(--slate);font-size:15px;font-weight:700">No destinations match your filters.<br><span style="font-weight:400;font-size:13px;opacity:.6">Try removing some categories.</span></div>`
+    :
+    filtered.map((gem, i) => `
+      <div class="result-card" onclick="openDetails('${gem.id}')">
+        <div class="result-card-img">
+          <img src="${gem.heroImage}" alt="${gem.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&auto=format&fit=crop'"/>
+          <div class="match-badge">Match #${i+1}</div>
+        </div>
+        <div class="result-card-body">
+          <div class="result-card-top">
+            <div><div class="result-name">${gem.name}</div><div class="result-state">${gem.state}</div></div>
+            <div class="result-time">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              ${gem.time}
+            </div>
+          </div>
+          <div class="result-desc">${gem.description}</div>
+          <button class="btn-explore">Explore ${gem.name}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    `).join('');
+}
+
+// ── GOOGLE MAPS ──
+function initGoogleMap() {
+  const loader = document.getElementById('map-loader');
+  const err = document.getElementById('map-error');
+  if (!GOOGLE_MAPS_API_KEY) { loader.style.display='none'; err.style.display='flex'; return; }
+  window._mapCallback = function() {
+    try {
+      const map = new google.maps.Map(document.getElementById('map-div'), {
+        center:{lat:22.5,lng:82.0},zoom:5,styles:MAP_STYLES,
+        zoomControl:true,mapTypeControl:false,streetViewControl:false,
+        fullscreenControl:true,gestureHandling:'cooperative'
+      });
+      GEMS.forEach(gem => {
+        const marker = new google.maps.Marker({
+          position:gem.position,map,title:gem.name,
+          icon:{path:google.maps.SymbolPath.CIRCLE,scale:9,
+            fillColor:'#1b4332',fillOpacity:.95,strokeWeight:2.5,strokeColor:'#ffffff'}
+        });
+        const info = new google.maps.InfoWindow({content:`
+          <div style="font-family:'Nunito',sans-serif;padding:8px 4px;min-width:150px">
+            <div style="font-size:13px;font-weight:800;color:#1b4332;margin-bottom:4px">${gem.name}</div>
+            <div style="font-size:11px;color:#78716c;margin-bottom:6px">${gem.state}</div>
+            <div style="font-size:10px;font-weight:700;color:#c8882a">${gem.distance} · ${gem.time}</div>
+          </div>`
+        });
+        marker.addListener('click',()=>openDetails(gem.id));
+        marker.addListener('mouseover',()=>info.open(map,marker));
+        marker.addListener('mouseout',()=>info.close());
+      });
+      loader.style.display='none'; mapReady=true;
+    } catch(e) { loader.style.display='none'; err.style.display='flex'; }
+  };
+  const s=document.createElement('script');
+  s.src=`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&callback=_mapCallback`;
+  s.async=true; s.defer=true;
+  s.onerror=()=>{ loader.style.display='none'; err.style.display='flex'; };
+  document.head.appendChild(s);
+}
+
+// ── INIT ──
+document.addEventListener('DOMContentLoaded', () => {
+  buildMarquee();
+  renderCatalog();
+  renderCatalogFilterCats();
+  renderPlannerCats();
+  initGoogleMap();
+});
+</script>
+</body>
+</html>
