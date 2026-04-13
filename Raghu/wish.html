@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Pinyon+Script&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+        }
+        
+        body, html {
+            background-color: #050505;
+            color: #e0e0e0;
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            height: 100%;
+            overflow: hidden; 
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        h1 { font-family: 'Cinzel', serif; }
+        .script { font-family: 'Pinyon Script', cursive; }
+
+        #dust-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        #opener {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1.5s ease-out;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .typewriter {
+            font-family: 'Courier New', monospace;
+            color: var(--gold);
+            border-right: 2px solid var(--gold);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: blink 0.75s step-end infinite;
+            font-size: 1.1rem;
+        }
+
+        @keyframes blink { 50% { border-color: transparent; } }
+
+        .gold-glow {
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+        }
+
+        /* Pulsing Emoji Trigger */
+        #emoji-trigger {
+            font-size: 3.5rem;
+            cursor: pointer;
+            display: inline-block;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 0 10px rgba(255, 174, 0, 0.4));
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(255, 174, 0, 0.4)); }
+            50% { transform: scale(1.2); filter: drop-shadow(0 0 25px rgba(255, 174, 0, 0.8)); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(255, 174, 0, 0.4)); }
+        }
+
+        .fade-in-text {
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="opener">
+        <div class="typewriter" id="typewriter-text"></div>
+    </div>
+
+    <canvas id="dust-canvas"></canvas>
+
+    <main class="relative z-10 h-screen flex flex-col justify-center items-center p-6 text-center">
+        <div class="opacity-0 transition-opacity duration-1000 delay-500" id="main-content">
+            
+            <header class="mb-12">
+                <span class="block text-white text-lg md:text-xl font-light tracking-[0.4em] uppercase mb-4">Happy Birthday</span>
+                <h1 class="script text-7xl md:text-9xl gold-glow block">Raghu</h1>
+            </header>
+
+            <article class="max-w-[320px] md:max-w-md mx-auto mb-16">
+                <p class="text-gray-300 text-sm md:text-lg italic leading-relaxed mb-4">
+                    "To another year of incredible adventures, ups and downs, and chasing big dreams."
+                </p>
+                <p class="text-gray-500 text-xs md:text-sm uppercase tracking-widest font-light">
+                    May your path always be lit.
+                </p>
+            </article>
+            
+            <div class="flex flex-col items-center gap-4">
+                <div id="emoji-trigger">🏮</div>
+                <p id="status-text" class="text-[10px] text-gray-600 uppercase tracking-[0.3em]">Tap to light the sky</p>
+            </div>
+        </div>
+    </main>
+
+    <canvas id="lanterns-canvas" class="fixed inset-0 pointer-events-none z-50"></canvas>
+
+    <script>
+        // 1. Typewriter Script
+        const text = "A message from the stars...";
+        const typewriter = document.getElementById('typewriter-text');
+        const opener = document.getElementById('opener');
+        const mainContent = document.getElementById('main-content');
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < text.length) {
+                typewriter.innerHTML += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 90);
+            } else {
+                setTimeout(() => {
+                    opener.style.opacity = '0';
+                    setTimeout(() => {
+                        opener.style.display = 'none';
+                        mainContent.style.opacity = '1';
+                    }, 1500);
+                }, 1000);
+            }
+        }
+        setTimeout(type, 500);
+
+        // 2. Dust Particles (Gold)
+        const dustCanvas = document.getElementById('dust-canvas');
+        const ctx = dustCanvas.getContext('2d');
+        let width, height, particles = [];
+
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            dustCanvas.width = width;
+            dustCanvas.height = height;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() { this.reset(); this.y = Math.random() * height; }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = height + 20;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.speed = Math.random() * 0.3 + 0.1;
+                this.opacity = Math.random() * 0.4;
+            }
+            update() {
+                this.y -= this.speed;
+                if (this.y < -10) this.reset();
+            }
+        }
+
+        for(let i=0; i<35; i++) particles.push(new Particle());
+
+        function animateDust() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(212, 175, 55, ${p.opacity})`;
+                ctx.fill();
+            });
+            requestAnimationFrame(animateDust);
+        }
+        animateDust();
+
+        // 3. Lantern Magic
+        const emoji = document.getElementById('emoji-trigger');
+        const statusText = document.getElementById('status-text');
+        const lCanvas = document.getElementById('lanterns-canvas');
+        const lCtx = lCanvas.getContext('2d');
+        let lanterns = [];
+
+        emoji.addEventListener('click', () => {
+            emoji.style.animation = "none";
+            emoji.style.transform = "scale(0.8)";
+            emoji.style.opacity = "0.3";
+            statusText.innerText = "The sky is yours";
+            statusText.style.color = "var(--gold)";
+            
+            lCanvas.width = window.innerWidth;
+            lCanvas.height = window.innerHeight;
+            spawnLanterns();
+            animateLanterns();
+        });
+
+        function spawnLanterns() {
+            for(let i=0; i<70; i++) {
+                lanterns.push({
+                    x: Math.random() * lCanvas.width,
+                    y: lCanvas.height + Math.random() * 700, 
+                    width: Math.random() * 18 + 12,
+                    height: Math.random() * 24 + 18,
+                    speed: Math.random() * 0.9 + 0.3,
+                    sway: Math.random() * 2,
+                    opacity: 0
+                });
+            }
+        }
+
+        function animateLanterns() {
+            lCtx.clearRect(0, 0, lCanvas.width, lCanvas.height);
+            lanterns.forEach(l => {
+                l.y -= l.speed;
+                l.x += Math.sin(l.y * 0.01 + l.sway) * 0.4;
+                
+                if (l.y > lCanvas.height - 100) l.opacity = Math.min(l.opacity + 0.01, 1);
+                else if (l.y < 150) l.opacity = Math.max(l.opacity - 0.005, 0);
+                else l.opacity = 1;
+
+                if(l.opacity > 0) {
+                    lCtx.save();
+                    lCtx.globalAlpha = l.opacity;
+                    lCtx.translate(l.x, l.y);
+                    lCtx.shadowBlur = 18;
+                    lCtx.shadowColor = "#ffae00";
+                    
+                    let grd = lCtx.createLinearGradient(0, 0, 0, l.height);
+                    grd.addColorStop(0, "#ffdb4d");
+                    grd.addColorStop(1, "#ff8c00");
+                    lCtx.fillStyle = grd;
+                    
+                    lCtx.beginPath();
+                    lCtx.moveTo(-l.width/2, 0);
+                    lCtx.lineTo(l.width/2, 0);
+                    lCtx.lineTo(l.width/2 * 0.8, l.height);
+                    lCtx.lineTo(-l.width/2 * 0.8, l.height);
+                    lCtx.closePath();
+                    lCtx.fill();
+                    lCtx.restore();
+                }
+            });
+            requestAnimationFrame(animateLanterns);
+        }
+    </script>
+</body>
+</html>
